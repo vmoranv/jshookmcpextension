@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-03-05T14:16:41.048Z",
+  "workflows": [
+    {
+      "slug": "batch-register",
+      "id": "workflow.batch-register.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_batch_register",
+        "ref": "main",
+        "commit": "35493930c2ac9435773e11ec747e1d5d7294cec9",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "batch-register",
+        "description": "Declarative workflow for parallel account registration with retry and branch summary.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_batch_register"
+      }
+    }
+  ]
+}

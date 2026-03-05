@@ -1,0 +1,19 @@
+node_modules/
+dist/
+*.log
+*.tsbuildinfo
+
+# Lock files (machine-generated, not tracked in this repo)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# pnpm cache
+.pnpm-store/
+
+# Local secrets
+**/.env
+
+# OS/editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-03-05T14:16:41.045Z",
+  "plugins": [
+    {
+      "slug": "burp-mcp-sse-call-tool",
+      "id": "io.github.vmoranv.burp-mcp-sse-call-tool",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool",
+        "ref": "main",
+        "commit": "5a9ec44459df4c6a7b93fcf22faf7171919622de",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "burp-mcp-sse-call-tool",
+        "description": "Burp MCP SSE bridge plugin for jshookmcp.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool"
+      }
+    },
+    {
+      "slug": "frida-bridge",
+      "id": "io.github.vmoranv.frida-bridge",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge",
+        "ref": "main",
+        "commit": "f8725e2a4c654f70bf1aa989cea17c2c4e80c2b3",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "frida-bridge",
+        "description": "Atomic bridge plugin exposing frida_bridge only.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge"
+      }
+    },
+    {
+      "slug": "ghidra-bridge",
+      "id": "io.github.vmoranv.ghidra-bridge",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge",
+        "ref": "main",
+        "commit": "1a3f0ab14e8ec9dbd409bc1175a1b90c59fa5bc9",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "ghidra-bridge",
+        "description": "Atomic bridge plugin exposing ghidra_bridge only.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge"
+      }
+    },
+    {
+      "slug": "ida-bridge",
+      "id": "io.github.vmoranv.ida-bridge",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge",
+        "ref": "main",
+        "commit": "20da9249d8eeb82a658c66817c7e2bf966bad95b",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "ida-bridge",
+        "description": "Atomic bridge plugin exposing ida_bridge only.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge"
+      }
+    },
+    {
+      "slug": "jadx-bridge",
+      "id": "io.github.vmoranv.jadx-bridge",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge",
+        "ref": "main",
+        "commit": "8d5460316da768797ff5d92441ba920cddfde714",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "jadx-bridge",
+        "description": "Atomic bridge plugin exposing jadx_bridge only.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge"
+      }
+    },
+    {
+      "slug": "zap-api-call",
+      "id": "io.github.vmoranv.zap-api-call",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call",
+        "ref": "main",
+        "commit": "5df42f0838d17f39333a0f96d8ebf81bfae54014",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "zap-api-call",
+        "description": "ZAP bridge plugin for jshookmcp.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call"
+      }
+    }
+  ]
+}

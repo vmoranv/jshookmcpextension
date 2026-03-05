@@ -1,0 +1,68 @@
+name: Register Extension Pointer
+description: Register or update a plugin/workflow pointer in this registry
+title: "[register] <kind>: <slug>"
+labels: ["register-extension"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - plugin
+        - workflow
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: kebab-case, e.g. ida-bridge
+      placeholder: ida-bridge
+    validations:
+      required: true
+
+  - type: input
+    id: extension_id
+    attributes:
+      label: Extension ID
+      description: plugin id or workflow id
+      placeholder: io.github.vmoranv.ida-bridge
+    validations:
+      required: true
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      description: GitHub repo URL
+      placeholder: https://github.com/vmoranv/jshook_plugin_ida_bridge
+    validations:
+      required: true
+
+  - type: input
+    id: ref
+    attributes:
+      label: Git Ref
+      description: branch, tag, or commit
+      value: main
+    validations:
+      required: true
+
+  - type: input
+    id: subpath
+    attributes:
+      label: Subpath
+      description: path inside repo where extension root exists
+      value: .
+    validations:
+      required: true
+
+  - type: input
+    id: entry
+    attributes:
+      label: Entry File
+      description: manifest.ts for plugin, workflow.ts for workflow
+      placeholder: manifest.ts
+    validations:
+      required: true

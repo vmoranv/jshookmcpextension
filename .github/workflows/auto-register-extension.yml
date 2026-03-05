@@ -1,0 +1,66 @@
+name: Sync Extension Registry
+
+on:
+  schedule:
+    # 06:00 Asia/Shanghai = 22:00 UTC (previous day)
+    - cron: '0 22 * * *'
+  issues:
+    types: [opened, edited, reopened, closed, labeled, unlabeled]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Collect open register-extension issues
+        id: collect
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'register-extension',
+              per_page: 100,
+            });
+            const simplified = issues.map((issue) => ({
+              number: issue.number,
+              title: issue.title,
+              body: issue.body || '',
+            }));
+            fs.writeFileSync('_open_issues.json', JSON.stringify(simplified, null, 2));
+            core.setOutput('count', String(simplified.length));
+
+      - name: Sync index from issues
+        run: node scripts/sync-index-from-issues.mjs --issues-file _open_issues.json
+
+      - name: Validate index
+        run: node scripts/validate-index.mjs
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: "automation/sync-registry-${{ github.run_id }}"
+          commit-message: "chore(registry): sync pointers from register-extension issues"
+          title: "chore(registry): sync pointers from register-extension issues"
+          body: |
+            Auto-generated registry sync run.
+
+            - trigger: `${{ github.event_name }}`
+            - open register issues: `${{ steps.collect.outputs.count }}`
+          labels: |
+            registry
+            automation
+          add-paths: |
+            registry/plugins.index.json
+            registry/workflows.index.json
