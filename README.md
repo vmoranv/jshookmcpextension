@@ -18,9 +18,8 @@
 
 1. 使用 `Register Extension` 模板创建 issue
 2. 必填仅 `Kind` 与 `Repository URL`
-3. 可选字段（`slug`、`extension id`、`ref`、`subpath`、`entry`）可留空自动补全
-4. 给 issue 打上 `register-extension` 标签（模板会默认附带）
-5. 人工审查通过后关闭 issue（只有关闭后的 issue 会进入同步）
+3. 给 issue 打上 `register-extension` 标签（模板会默认附带）
+4. 人工审查通过后关闭 issue（只有关闭后的 issue 会进入同步）
 
 ## 自动同步机制
 
@@ -36,7 +35,7 @@ GitHub Actions 会在以下时机执行同步：
 2. 解析并校验 issue 中的扩展指针
 3. 拉取对应扩展仓库，读取 `meta.yaml`，解析当前 commit
 4. 对比 registry 中现有条目，自动处理增删改
-5. 更新 `registry/*.index.json` 并自动发起 PR
+5. 更新 `registry/*.index.json` 并直接提交到 `master`
 
 说明：
 
