@@ -1,8 +1,14 @@
 name: Register Extension Pointer
-description: Register or update a plugin/workflow pointer in this registry
-title: "[register] <kind>: <slug>"
+description: Register or update a plugin/workflow pointer (sync only after issue is closed)
+title: "[register] <kind>: <repo>"
 labels: ["register-extension"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        审查通过后请关闭该 issue。Action 仅处理已关闭且带 `register-extension` 标签的 issue。
+        仅 `Kind` + `Repository URL` 必填，其余字段可留空，由同步脚本自动补全。
+
   - type: dropdown
     id: kind
     attributes:
@@ -10,24 +16,6 @@ body:
       options:
         - plugin
         - workflow
-    validations:
-      required: true
-
-  - type: input
-    id: slug
-    attributes:
-      label: Slug
-      description: kebab-case, e.g. ida-bridge
-      placeholder: ida-bridge
-    validations:
-      required: true
-
-  - type: input
-    id: extension_id
-    attributes:
-      label: Extension ID
-      description: plugin id or workflow id
-      placeholder: io.github.vmoranv.ida-bridge
     validations:
       required: true
 
@@ -41,28 +29,36 @@ body:
       required: true
 
   - type: input
+    id: slug
+    attributes:
+      label: Slug (Optional)
+      description: 留空时自动从仓库名推导，如 jshook_plugin_ida_bridge -> ida-bridge
+      placeholder: ida-bridge
+
+  - type: input
+    id: extension_id
+    attributes:
+      label: Extension ID (Optional)
+      description: 留空自动生成（plugin: io.github.<owner>.<slug>；workflow: workflow.<slug>.v1）
+      placeholder: io.github.vmoranv.ida-bridge
+
+  - type: input
     id: ref
     attributes:
-      label: Git Ref
-      description: branch, tag, or commit
+      label: Git Ref (Optional)
+      description: branch, tag, or commit，默认 main
       value: main
-    validations:
-      required: true
 
   - type: input
     id: subpath
     attributes:
-      label: Subpath
-      description: path inside repo where extension root exists
+      label: Subpath (Optional)
+      description: 扩展根目录路径，默认 .
       value: .
-    validations:
-      required: true
 
   - type: input
     id: entry
     attributes:
-      label: Entry File
-      description: manifest.ts for plugin, workflow.ts for workflow
+      label: Entry File (Optional)
+      description: plugin 默认 manifest.ts；workflow 默认 workflow.ts
       placeholder: manifest.ts
-    validations:
-      required: true

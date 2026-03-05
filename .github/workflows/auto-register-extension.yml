@@ -5,22 +5,24 @@ on:
     # 06:00 Asia/Shanghai = 22:00 UTC (previous day)
     - cron: '0 22 * * *'
   issues:
-    types: [opened, edited, reopened, closed, labeled, unlabeled]
+    types: [closed]
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   sync:
+    if: >
+      github.event_name != 'issues' ||
+      contains(github.event.issue.labels.*.name, 'register-extension')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Collect open register-extension issues
+      - name: Collect closed register-extension issues
         id: collect
         uses: actions/github-script@v7
         with:
@@ -29,7 +31,7 @@ jobs:
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              state: 'open',
+              state: 'closed',
               labels: 'register-extension',
               per_page: 100,
             });
@@ -38,29 +40,23 @@ jobs:
               title: issue.title,
               body: issue.body || '',
             }));
-            fs.writeFileSync('_open_issues.json', JSON.stringify(simplified, null, 2));
+            fs.writeFileSync('_closed_issues.json', JSON.stringify(simplified, null, 2));
             core.setOutput('count', String(simplified.length));
 
       - name: Sync index from issues
-        run: node scripts/sync-index-from-issues.mjs --issues-file _open_issues.json
+        run: node scripts/sync-index-from-issues.mjs --issues-file _closed_issues.json
 
       - name: Validate index
         run: node scripts/validate-index.mjs
 
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: "automation/sync-registry-${{ github.run_id }}"
-          commit-message: "chore(registry): sync pointers from register-extension issues"
-          title: "chore(registry): sync pointers from register-extension issues"
-          body: |
-            Auto-generated registry sync run.
-
-            - trigger: `${{ github.event_name }}`
-            - open register issues: `${{ steps.collect.outputs.count }}`
-          labels: |
-            registry
-            automation
-          add-paths: |
-            registry/plugins.index.json
-            registry/workflows.index.json
+      - name: Commit and push registry updates
+        run: |
+          if git diff --quiet -- registry/plugins.index.json registry/workflows.index.json; then
+            echo "No registry changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/plugins.index.json registry/workflows.index.json
+          git commit -m "chore(registry): sync pointers from register-extension issues"
+          git push

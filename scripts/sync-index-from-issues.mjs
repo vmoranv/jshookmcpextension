@@ -15,9 +15,18 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function extractSection(body, label) {
+function extractMarkdownSection(body, label) {
   const re = new RegExp(
-    `###\\s+${escapeRegExp(label)}\\s*\\r?\\n\\r?\\n([\\s\\S]*?)(?=\\r?\\n###\\s+|$)`,
+    `#{2,6}\\s+${escapeRegExp(label)}\\s*\\r?\\n(?:\\r?\\n)?([\\s\\S]*?)(?=\\r?\\n#{2,6}\\s+|$)`,
+    'i',
+  );
+  const match = body.match(re);
+  return (match?.[1] ?? '').trim();
+}
+
+function extractSimpleField(body, label) {
+  const re = new RegExp(
+    `(?:^|\\r?\\n)\\s*${escapeRegExp(label)}\\s*\\r?\\n\\s*([^\\r\\n]+)`,
     'i',
   );
   const match = body.match(re);
@@ -31,15 +40,47 @@ function firstLine(value) {
     .find((line) => line.length > 0) ?? '';
 }
 
+function extractValue(body, label) {
+  return (
+    firstLine(extractMarkdownSection(body, label)) ||
+    firstLine(extractSimpleField(body, label))
+  );
+}
+
+function parseRepoUrl(repo) {
+  const match = String(repo).trim().match(/^https:\/\/github\.com\/([^/]+)\/([^/?#]+?)(?:\.git)?\/?$/i);
+  if (!match) return null;
+  return { owner: match[1], name: match[2] };
+}
+
+function deriveSlug(kind, repoName) {
+  let slug = String(repoName).trim().toLowerCase();
+  slug = slug.replace(/^jshook_plugin_/, '');
+  slug = slug.replace(/^jshook_workflow_/, '');
+  slug = slug.replace(/^jshook-plugin-/, '');
+  slug = slug.replace(/^jshook-workflow-/, '');
+  slug = slug.replace(/_/g, '-');
+  if (kind === 'plugin') slug = slug.replace(/^plugin-/, '');
+  if (kind === 'workflow') slug = slug.replace(/^workflow-/, '');
+  return slug;
+}
+
 function parseIssue(issue) {
   const body = String(issue?.body ?? '');
-  const kind = firstLine(extractSection(body, 'Kind')).toLowerCase();
-  const slug = firstLine(extractSection(body, 'Slug'));
-  const id = firstLine(extractSection(body, 'Extension ID'));
-  const repo = firstLine(extractSection(body, 'Repository URL'));
-  const ref = firstLine(extractSection(body, 'Git Ref')) || 'main';
-  const subpath = firstLine(extractSection(body, 'Subpath')) || '.';
-  const entryRaw = firstLine(extractSection(body, 'Entry File'));
+  const kind = extractValue(body, 'Kind').toLowerCase();
+  const repo = extractValue(body, 'Repository URL');
+  const parsedRepo = parseRepoUrl(repo);
+  const slug = extractValue(body, 'Slug') || (parsedRepo ? deriveSlug(kind, parsedRepo.name) : '');
+  const id =
+    extractValue(body, 'Extension ID') ||
+    (parsedRepo
+      ? (kind === 'workflow'
+          ? `workflow.${slug}.v1`
+          : `io.github.${parsedRepo.owner.toLowerCase()}.${slug}`)
+      : '');
+  const ref = extractValue(body, 'Git Ref') || 'main';
+  const subpath = extractValue(body, 'Subpath') || '.';
+  const entryRaw = extractValue(body, 'Entry File');
   const entry = entryRaw || (kind === 'workflow' ? 'workflow.ts' : 'manifest.ts');
 
   const missing = [];
@@ -179,6 +220,12 @@ function syncOne(filePath, key, nextList) {
     seenId.add(item.id);
   }
 
+  const previousList = Array.isArray(current[key]) ? current[key] : [];
+  const listChanged = JSON.stringify(previousList) !== JSON.stringify(sorted);
+  if (!listChanged) {
+    return false;
+  }
+
   const next = {
     ...current,
     schemaVersion: 1,
@@ -186,12 +233,11 @@ function syncOne(filePath, key, nextList) {
     [key]: sorted,
   };
 
-  const changed = JSON.stringify(current) !== JSON.stringify(next);
-  if (changed) saveJson(filePath, next);
-  return changed;
+  saveJson(filePath, next);
+  return true;
 }
 
-const issuesFile = arg('issues-file') ?? '_open_issues.json';
+const issuesFile = arg('issues-file') ?? '_closed_issues.json';
 const issues = loadJson(issuesFile);
 if (!Array.isArray(issues)) {
   throw new Error('issues-file must contain a JSON array');
