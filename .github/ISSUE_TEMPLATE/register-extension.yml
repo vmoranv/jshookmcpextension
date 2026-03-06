@@ -1,18 +1,39 @@
-name: Register Extension Pointer
-description: Register or update a plugin/workflow pointer (sync only after issue is closed)
+name: Register Extension (English)
+description: Register or update a plugin/workflow pointer (English template; sync only after the issue is closed)
 title: "[register] <kind>: <repo>"
 labels: ["register-extension"]
 body:
   - type: markdown
     attributes:
       value: |
-        审查通过后请关闭该 issue。Action 仅处理已关闭且带 `register-extension` 标签的 issue。
-        仅需填写 `Kind` 与 `Repository URL`，其余信息由同步脚本自动推导。
+        Please close this issue after approval. The Action only processes closed issues with the `register-extension` label.
+        Only `Kind` and `Repository URL` are required. All other metadata is derived automatically by the sync script.
+        Keep the default issue title format if possible: `[register] <kind>: <repo>`.
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Examples
+
+        **Plugin example**
+        - Kind: `plugin`
+        - Repository URL: `https://github.com/example/jshook_plugin_demo`
+        - Title example: `[register] plugin: https://github.com/example/jshook_plugin_demo`
+
+        **Workflow example**
+        - Kind: `workflow`
+        - Repository URL: `https://github.com/example/jshook_workflow_demo`
+        - Title example: `[register] workflow: https://github.com/example/jshook_workflow_demo`
+
+        **Requirements**
+        - The repository should be publicly accessible
+        - The sync script will resolve metadata automatically
 
   - type: dropdown
     id: kind
     attributes:
       label: Kind
+      description: Select the extension kind
       options:
         - plugin
         - workflow
@@ -23,7 +44,7 @@ body:
     id: repository
     attributes:
       label: Repository URL
-      description: GitHub repo URL
-      placeholder: https://github.com/vmoranv/jshook_plugin_ida_bridge
+      description: GitHub repository URL, for example a plugin or workflow repository
+      placeholder: https://github.com/example/jshook_plugin_demo
     validations:
       required: true
