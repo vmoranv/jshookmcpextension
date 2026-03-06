@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-05T14:16:41.048Z",
+  "updatedAt": "2026-03-06T04:17:37.568Z",
   "workflows": [
     {
       "slug": "batch-register",
@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_batch_register",
         "ref": "main",
-        "commit": "35493930c2ac9435773e11ec747e1d5d7294cec9",
+        "commit": "8e7c5f486f56c400a11cd039b99a7513647c5538",
         "subpath": ".",
         "entry": "workflow.ts"
       },

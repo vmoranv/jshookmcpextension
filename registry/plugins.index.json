@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-05T14:16:41.045Z",
+  "updatedAt": "2026-03-06T04:17:37.535Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool",
         "ref": "main",
-        "commit": "5a9ec44459df4c6a7b93fcf22faf7171919622de",
+        "commit": "8186eac15073a9e0b8ddd4b68d544a7bfaed82e9",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -27,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge",
         "ref": "main",
-        "commit": "f8725e2a4c654f70bf1aa989cea17c2c4e80c2b3",
+        "commit": "d5e0749ef600b5b23bc5556583c89849679ee9a9",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -45,7 +45,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge",
         "ref": "main",
-        "commit": "1a3f0ab14e8ec9dbd409bc1175a1b90c59fa5bc9",
+        "commit": "91e6df1043808441aa396d0426c164c539134544",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -63,7 +63,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge",
         "ref": "main",
-        "commit": "20da9249d8eeb82a658c66817c7e2bf966bad95b",
+        "commit": "2a2d603f368129f95d7fc1cebec2b54dd04ac51e",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -81,7 +81,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge",
         "ref": "main",
-        "commit": "8d5460316da768797ff5d92441ba920cddfde714",
+        "commit": "9dc9ff7d8387839c4f07038d8887d1ec985da5c0",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -99,7 +99,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call",
         "ref": "main",
-        "commit": "5df42f0838d17f39333a0f96d8ebf81bfae54014",
+        "commit": "a562eb561ebdde7985290a0d1e00e2c6cf7d60ab",
         "subpath": ".",
         "entry": "manifest.ts"
       },
