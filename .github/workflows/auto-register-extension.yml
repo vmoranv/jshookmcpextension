@@ -4,8 +4,6 @@ on:
   schedule:
     # 06:00 Asia/Shanghai = 22:00 UTC (previous day)
     - cron: '0 22 * * *'
-  issues:
-    types: [closed]
   workflow_dispatch:
 
 permissions:
@@ -13,9 +11,6 @@ permissions:
 
 jobs:
   sync:
-    if: >
-      github.event_name != 'issues' ||
-      contains(github.event.issue.labels.*.name, 'register-extension')
     runs-on: ubuntu-latest
 
     steps:

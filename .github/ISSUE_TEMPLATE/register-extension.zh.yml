@@ -1,13 +1,14 @@
 name: 注册扩展（中文）
-description: 注册或更新插件或工作流指针（中文模板；仅在 issue 关闭后同步）
+description: 注册或更新插件或工作流指针（由每日定时或手动 workflow 同步）
 title: "[register] <kind>: <repo>"
 labels: ["register-extension"]
 body:
   - type: markdown
     attributes:
       value: |
-        审查通过后请关闭该 issue。Action 仅处理已关闭且带 `register-extension` 标签的 issue。
-        只需填写 `Kind` 与 `Repository URL`，其余元信息由同步脚本自动推导。
+        请保留此 issue 作为 registry 同步的元数据记录。
+        registry 会在每天定时同步，或由维护者手动触发 workflow 提前同步。
+        只需填写 `Kind` 与 `Repository URL`，其余元信息由同步脚本自动解析。
         建议保留默认标题格式：`[register] <kind>: <repo>`。
 
   - type: markdown
