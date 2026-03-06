@@ -1,67 +1,99 @@
 # jshookmcpextension
 
-`vmoranv/jshookmcp` 的扩展指针注册仓库（registry-only）。
+[English](./README.md) | [Chinese](./README.zh.md)
 
-本仓库不存放插件或工作流源码，只维护扩展仓库的 Git 指针与元信息快照，供 `jshookmcp` 侧按指针拉取。
+## Quick Links
 
-## 目录说明
+[![Register Extension](https://img.shields.io/badge/Register-Extension-2ea44f?style=for-the-badge)](https://github.com/vmoranv/jshookmcpextension/issues/new?template=register-extension.yml)
+[![Plugin Index](https://img.shields.io/badge/View-Plugin%20Index-0969da?style=for-the-badge)](https://raw.githubusercontent.com/vmoranv/jshookmcpextension/master/registry/plugins.index.json)
+[![Workflow Index](https://img.shields.io/badge/View-Workflow%20Index-8250df?style=for-the-badge)](https://raw.githubusercontent.com/vmoranv/jshookmcpextension/master/registry/workflows.index.json)
 
-- `registry/plugins.index.json`：插件指针索引
-- `registry/workflows.index.json`：工作流指针索引
-- `scripts/`：索引同步与校验脚本
-- `.github/ISSUE_TEMPLATE/register-extension.yml`：扩展注册模板
-- `.github/workflows/auto-register-extension.yml`：自动同步流程
+> **Register here**: [Open the `Register Extension` issue template](https://github.com/vmoranv/jshookmcpextension/issues/new?template=register-extension.yml)
 
-## 注册方式
+Registry-only repository for extension pointers used by `vmoranv/jshookmcp`.
 
-通过仓库 Issue 提交扩展仓库信息：
+This repository does **not** store plugin or workflow source code. It only maintains Git pointers and metadata snapshots for extension repositories so that `jshookmcp` can fetch them by reference.
 
-1. 使用 `Register Extension` 模板创建 issue
-2. 必填仅 `Kind` 与 `Repository URL`
-3. 给 issue 打上 `register-extension` 标签（模板会默认附带）
-4. 人工审查通过后关闭 issue（只有关闭后的 issue 会进入同步）
+## Directory Layout
 
-## 自动同步机制
+- `registry/plugins.index.json`: plugin pointer index
+- `registry/workflows.index.json`: workflow pointer index
+- `scripts/`: index sync and validation scripts
+- `.github/ISSUE_TEMPLATE/`: issue templates
+- `.github/workflows/auto-register-extension.yml`: automated sync workflow
 
-GitHub Actions 会在以下时机执行同步：
+## How to Register an Extension
 
-- `issues.closed` 事件（且 issue 带 `register-extension` 标签）
-- `workflow_dispatch` 手动触发
-- 每天北京时间 `06:00` 定时任务（UTC `22:00`）
+Submit extension repository information through a GitHub Issue:
 
-同步逻辑：
+1. Create an issue with the `Register Extension` template
+2. Fill in only the required fields: `Kind` and `Repository URL`
+3. Keep the `register-extension` label on the issue (the template adds it by default)
+4. Close the issue after manual review is approved
 
-1. 扫描所有已关闭且带 `register-extension` 标签的 issue
-2. 解析并校验 issue 中的扩展指针
-3. 拉取对应扩展仓库，读取 `meta.yaml`，解析当前 commit
-4. 对比 registry 中现有条目，自动处理增删改
-5. 更新 `registry/*.index.json` 并直接提交到 `master`
+Only closed issues are included in synchronization.
 
-说明：
+## Registration Examples
 
-- 未关闭的 issue 仅作为待审状态，不会参与 Action 同步
-- 已在 registry 的历史条目，即使没有对应 issue，也不会仅因“缺 issue”被删除
-- 仅在远端仓库不可访问或入口文件失效时，脚本才会清理失效指针
+**Plugin example**
 
-## jshookmcp 拉取方式
+- Kind: `plugin`
+- Repository URL: `https://github.com/example/jshook_plugin_demo`
+- Title: `[register] plugin: https://github.com/example/jshook_plugin_demo`
 
-`jshookmcp` 本体可按以下流程浏览并拉取插件/工作流：
+**Workflow example**
 
-1. 拉取索引：
+- Kind: `workflow`
+- Repository URL: `https://github.com/example/jshook_workflow_demo`
+- Title: `[register] workflow: https://github.com/example/jshook_workflow_demo`
+
+**Requirements**
+
+- The repository should be publicly accessible
+- Keep the `register-extension` label on the issue
+- Close the issue after approval so the sync Action can process it
+
+## Automatic Sync
+
+GitHub Actions runs the sync process at the following times:
+
+- On `issues.closed` when the issue has the `register-extension` label
+- On manual `workflow_dispatch`
+- Daily at `06:00` Beijing time (`22:00` UTC)
+
+Sync flow:
+
+1. Scan all closed issues with the `register-extension` label
+2. Parse and validate extension pointers from the issue body
+3. Fetch the extension repository, read `meta.yaml`, and resolve the current commit
+4. Compare against the existing registry entries and apply additions, updates, or removals
+5. Update `registry/*.index.json` and commit the result directly to `master`
+
+Notes:
+
+- Open issues are treated as pending review and are not synchronized
+- Existing historical registry entries are not removed only because their issue is missing
+- Pointers are cleaned up only when the remote repository becomes inaccessible or the entry file is invalid
+
+## How `jshookmcp` Fetches Extensions
+
+`jshookmcp` can browse and fetch plugins/workflows with the following process:
+
+1. Fetch the indexes:
 
 ```bash
 curl -L https://raw.githubusercontent.com/vmoranv/jshookmcpextension/master/registry/plugins.index.json
 curl -L https://raw.githubusercontent.com/vmoranv/jshookmcpextension/master/registry/workflows.index.json
 ```
 
-2. 通过 `slug` 或 `id` 选中条目，读取：
+2. Select an entry by `slug` or `id`, then read:
 
 - `source.repo`
-- `source.commit`（优先固定 commit，保证可复现）
+- `source.commit` (pinning a commit is preferred for reproducibility)
 - `source.subpath`
 - `source.entry`
 
-3. 从扩展仓库拉取并读取入口文件（示例）：
+3. Fetch the extension repository and read the entry files, for example:
 
 ```bash
 git clone https://github.com/vmoranv/jshook_plugin_ida_bridge tmp_ext
@@ -70,9 +102,9 @@ cat tmp_ext/manifest.ts
 cat tmp_ext/meta.yaml
 ```
 
-4. 插件读取 `manifest.ts`，工作流读取 `workflow.ts`，并结合 `meta.yaml` 展示元信息。
+4. For plugins, read `manifest.ts`; for workflows, read `workflow.ts`; combine that with `meta.yaml` to present metadata.
 
-## 本地校验
+## Local Validation
 
 ```bash
 node scripts/validate-index.mjs
