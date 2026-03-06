@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-06T04:17:37.568Z",
+  "updatedAt": "2026-03-06T13:35:23.056Z",
   "workflows": [
+    {
+      "slug": "api-probe-batch",
+      "id": "workflow.api-probe-batch.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch",
+        "ref": "main",
+        "commit": "34cd6899dd4db3d50ab3283b377616485722c95f",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "api-probe-batch",
+        "description": "Declarative workflow for OpenAPI-first probing of authenticated API endpoints.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch"
+      }
+    },
     {
       "slug": "batch-register",
       "id": "workflow.batch-register.v1",
@@ -9,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_batch_register",
         "ref": "main",
-        "commit": "8e7c5f486f56c400a11cd039b99a7513647c5538",
+        "commit": "1199f902676c4f6f1d3954900d61207914d80e0b",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -18,6 +36,60 @@
         "description": "Declarative workflow for parallel account registration with retry and branch summary.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_batch_register"
+      }
+    },
+    {
+      "slug": "js-bundle-search",
+      "id": "workflow.js-bundle-search.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_js_bundle_search",
+        "ref": "main",
+        "commit": "7bcaf7099e70b33082baf83d012abdc605c1f322",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "js-bundle-search",
+        "description": "Declarative workflow for searching remote JavaScript bundles with cached fetch and multi-pattern analysis.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_js_bundle_search"
+      }
+    },
+    {
+      "slug": "register-account-flow",
+      "id": "workflow.register-account-flow.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_register_account_flow",
+        "ref": "main",
+        "commit": "ee6ca71d4f68db9b13d3ad314221a167b9693ae9",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "register-account-flow",
+        "description": "Declarative workflow for account registration, token capture, and optional email verification.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_register_account_flow"
+      }
+    },
+    {
+      "slug": "web-api-capture-session",
+      "id": "workflow.web-api-capture-session.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session",
+        "ref": "main",
+        "commit": "dc4316faf80255ebfdf32db43cfc7a39f97d430f",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "web-api-capture-session",
+        "description": "Declarative workflow for navigation, action replay, request capture, auth extraction, and HAR/report export.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session"
       }
     }
   ]
