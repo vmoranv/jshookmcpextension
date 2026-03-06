@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-06T04:17:37.535Z",
+  "updatedAt": "2026-03-06T04:30:23.549Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -18,6 +18,23 @@
         "description": "Burp MCP SSE bridge plugin for jshookmcp.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool"
+      }
+    },
+    {
+      "slug": "demo",
+      "id": "io.github.vmoranv.demo",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_demo",
+        "ref": "main",
+        "commit": "6abfc6e57312927549c522e40616477ded38c2cf",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "description": "Demo plugin showing recommended extension structure, built-in tool calls, config/env defaults, and optional HTTP API probe.",
+        "author": "vmoranv",
+        "source_repo": "local-demo"
       }
     },
     {
