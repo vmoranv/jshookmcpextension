@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-06T13:35:23.056Z",
+  "updatedAt": "2026-03-07T22:01:06.855Z",
   "workflows": [
     {
       "slug": "api-probe-batch",
@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch",
         "ref": "main",
-        "commit": "34cd6899dd4db3d50ab3283b377616485722c95f",
+        "commit": "e526cb4088609332b7d587c724fd654879ada949",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -18,6 +18,24 @@
         "description": "Declarative workflow for OpenAPI-first probing of authenticated API endpoints.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch"
+      }
+    },
+    {
+      "slug": "auth-bootstrap",
+      "id": "workflow.auth-bootstrap.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_auth_bootstrap",
+        "ref": "main",
+        "commit": "b3fbbc3cb43421d71e070fdbb80dab22c5eb25fc",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "auth-bootstrap",
+        "description": "Declarative workflow for bootstrapping web authentication via form submission, optional temp-mail verification, and auth artifact extraction.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_auth_bootstrap"
       }
     },
     {
@@ -45,7 +63,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_js_bundle_search",
         "ref": "main",
-        "commit": "7bcaf7099e70b33082baf83d012abdc605c1f322",
+        "commit": "3b2767903b370938e6fdb5fe75d93d9c16ac833f",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -63,7 +81,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_register_account_flow",
         "ref": "main",
-        "commit": "ee6ca71d4f68db9b13d3ad314221a167b9693ae9",
+        "commit": "dbbccffc50c5d3faa1eee57f8990805bd9553903",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -75,13 +93,67 @@
       }
     },
     {
+      "slug": "script-evidence-scan",
+      "id": "workflow.script-evidence-scan.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan",
+        "ref": "main",
+        "commit": "3f81397e94a45f9619f3903b9b4007ac39c7be26",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "script-evidence-scan",
+        "description": "Declarative workflow for extracting evidence from browser-loaded scripts via get_all_scripts and get_script_source.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan"
+      }
+    },
+    {
+      "slug": "temp-mail-extract-link",
+      "id": "workflow.temp-mail-extract-link.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_extract_link",
+        "ref": "main",
+        "commit": "f729f768b70160596d510fdae114d3979a919af1",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "temp-mail-extract-link",
+        "description": "Declarative workflow for extracting verification or activation links from a temp-mail detail page.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_extract_link"
+      }
+    },
+    {
+      "slug": "temp-mail-open-latest",
+      "id": "workflow.temp-mail-open-latest.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_open_latest",
+        "ref": "main",
+        "commit": "96d955563333107606506cff81b4a67d5fffc287",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "temp-mail-open-latest",
+        "description": "Declarative workflow for opening the latest relevant message in a temporary mailbox.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_open_latest"
+      }
+    },
+    {
       "slug": "web-api-capture-session",
       "id": "workflow.web-api-capture-session.v1",
       "source": {
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session",
         "ref": "main",
-        "commit": "dc4316faf80255ebfdf32db43cfc7a39f97d430f",
+        "commit": "181b60242bd99bd23f424229f76f58a4abf8632f",
         "subpath": ".",
         "entry": "workflow.ts"
       },
