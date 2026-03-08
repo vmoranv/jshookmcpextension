@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-07T22:01:06.855Z",
+  "updatedAt": "2026-03-08T22:01:10.238Z",
   "workflows": [
     {
       "slug": "api-probe-batch",
@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch",
         "ref": "main",
-        "commit": "e526cb4088609332b7d587c724fd654879ada949",
+        "commit": "0f4b0eb85c43ee73a3c486960b89a1fe06a1090b",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -27,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_auth_bootstrap",
         "ref": "main",
-        "commit": "b3fbbc3cb43421d71e070fdbb80dab22c5eb25fc",
+        "commit": "4bf0f901233b817153a8b7cbb8d08307d95eff3e",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -63,7 +63,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_js_bundle_search",
         "ref": "main",
-        "commit": "3b2767903b370938e6fdb5fe75d93d9c16ac833f",
+        "commit": "fa8b7bbdbf11a28fe81dce23a034b873a0a4dd0f",
         "subpath": ".",
         "entry": "workflow.ts"
       },
