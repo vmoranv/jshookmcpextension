@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-10T22:14:17.483Z",
+  "updatedAt": "2026-03-19T22:14:43.526Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -27,12 +27,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_demo",
         "ref": "main",
-        "commit": "be1894c6a1fcea2254107adfcd7dbebc1eb17159",
+        "commit": "305017eab1889e616a587ba6a114dfa231150917",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "description": "Demo plugin showing recommended extension structure, built-in tool calls, config/env defaults, and optional HTTP API probe.",
+        "name": "Demo Plugin",
+        "description": "A reference plugin showing env defaults, built-in tool invocation, and optional HTTP probing.",
         "author": "vmoranv",
         "source_repo": "local-demo"
       }
@@ -44,13 +45,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge",
         "ref": "main",
-        "commit": "8db1877989abd0be2830463a431560d8bdcdbdf9",
+        "commit": "fc0a08e82e50dbb665d693abbf1ef38aba7bbe8a",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "name": "frida-bridge",
-        "description": "Atomic bridge plugin exposing frida_bridge only.",
+        "name": "Frida Bridge",
+        "description": "Atomic Frida bridge plugin.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge"
       }
@@ -62,13 +63,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge",
         "ref": "main",
-        "commit": "960a4e3277a06d6a52170becea843fd95a24ae16",
+        "commit": "c383855fa3a69a6dda1acad0bbf61193bda5fbd0",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "name": "ghidra-bridge",
-        "description": "Atomic bridge plugin exposing ghidra_bridge only.",
+        "name": "Ghidra Bridge",
+        "description": "Atomic Ghidra bridge plugin.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge"
       }
@@ -80,13 +81,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge",
         "ref": "main",
-        "commit": "5f1521121faa307e08304346ff3b06580e4b9a04",
+        "commit": "5bbd572e9593c3420e230d58aac1dc9dd3ab684d",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "name": "ida-bridge",
-        "description": "Atomic bridge plugin exposing ida_bridge only.",
+        "name": "IDA Bridge",
+        "description": "Atomic IDA bridge plugin.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge"
       }
@@ -98,13 +99,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge",
         "ref": "main",
-        "commit": "6cf059d40260e5b4a85143307796631345b25d13",
+        "commit": "ea8a1801ce816036247d322c4a1729469cd48cf4",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "name": "jadx-bridge",
-        "description": "Atomic bridge plugin exposing jadx_bridge only.",
+        "name": "Jadx Bridge",
+        "description": "Atomic Jadx bridge plugin.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge"
       }
@@ -116,13 +117,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call",
         "ref": "main",
-        "commit": "dd2f8325978cf48ea2869f0f2a1f8aaa7f811fdf",
+        "commit": "63bf4925820f2cabaa7da46cbdd9a1332c6a4b8b",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
-        "name": "zap-api-call",
-        "description": "ZAP bridge plugin for jshookmcp.",
+        "name": "ZAP API",
+        "description": "Plugin exposing zap_api_call and zap_core_version.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call"
       }
