@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-19T22:14:43.526Z",
+  "updatedAt": "2026-03-25T03:02:01.682Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -108,6 +108,42 @@
         "description": "Atomic Jadx bridge plugin.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge"
+      }
+    },
+    {
+      "slug": "mission-pack",
+      "id": "io.github.vmoranv.mission-pack",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_mission_pack",
+        "ref": "main",
+        "commit": "76117d801e4dfa02ca727d060ed8d576bf687ae4",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "mission-pack",
+        "description": "Scaffold plugin for externalizing built-in MissionWorkflowRegistry mission packs from jshookmcp core.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_mission_pack"
+      }
+    },
+    {
+      "slug": "script-presets",
+      "id": "io.github.vmoranv.script-presets",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_script_presets",
+        "ref": "main",
+        "commit": "179dbfaa77a4b85e48c5f2e469d4edbdcf24e8e8",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "script-presets",
+        "description": "Scaffold plugin for externalizing built-in page script preset packs from jshookmcp core.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_script_presets"
       }
     },
     {
