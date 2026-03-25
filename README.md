@@ -31,7 +31,9 @@ Submit extension repository information through a GitHub Issue:
 3. Keep the `register-extension` label on the issue (the template adds it by default)
 4. Close the issue after manual review is approved
 
-Only closed issues are included in synchronization.
+If review rejects the registration, close it as `not planned` instead. `not planned` issues are excluded from synchronization.
+
+Only closed issues with the `register-extension` label are candidates for synchronization. Issues closed as `not planned` are excluded.
 
 ## Registration Examples
 
@@ -64,14 +66,16 @@ GitHub Actions runs the sync process at the following times:
 Sync flow:
 
 1. Scan all closed issues with the `register-extension` label
-2. Parse and validate extension pointers from the issue body
-3. Fetch the extension repository, read `meta.yaml`, and resolve the current commit
-4. Compare against the existing registry entries and apply additions, updates, or removals
-5. Update `registry/*.index.json` and commit the result directly to `master`
+2. Exclude issues closed as `not planned`
+3. Parse and validate extension pointers from the issue body
+4. Fetch the extension repository, read `meta.yaml`, and resolve the current commit
+5. Compare against the existing registry entries and apply additions, updates, or removals
+6. Update `registry/*.index.json` and commit the result directly to `master`
 
 Notes:
 
 - Open issues are treated as pending review and are not synchronized
+- Issues closed as `not planned` are excluded from synchronization; if they match an existing pointer, the next sync removes that pointer
 - Existing historical registry entries are not removed only because their issue is missing
 - Pointers are cleaned up only when the remote repository becomes inaccessible or the entry file is invalid
 

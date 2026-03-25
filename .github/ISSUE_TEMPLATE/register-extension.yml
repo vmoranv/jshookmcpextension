@@ -7,9 +7,10 @@ body:
     attributes:
       value: |
         Keep this issue as the metadata record for registry sync.
-        Registry updates are applied by the daily scheduled workflow, or sooner if someone manually runs the sync workflow.
+        Registry updates are applied on issue close, by the daily scheduled workflow, or sooner if someone manually runs the sync workflow.
         Only `Kind` and `Repository URL` are required. All other metadata is derived automatically by the sync script.
         Keep the default issue title format if possible: `[register] <kind>: <repo>`.
+        If review rejects the registration, close the issue as `not planned` so sync will exclude it.
 
   - type: markdown
     attributes:

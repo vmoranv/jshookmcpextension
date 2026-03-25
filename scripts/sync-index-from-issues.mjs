@@ -150,6 +150,41 @@ function keyOf(kind, slug) {
   return `${kind}:${slug}`;
 }
 
+function issueLabels(issue) {
+  return Array.isArray(issue?.labels)
+    ? issue.labels
+        .map((label) => {
+          if (typeof label === 'string') return label;
+          return label?.name;
+        })
+        .filter(Boolean)
+        .map((label) => String(label).trim().toLowerCase())
+    : [];
+}
+
+function isNotPlannedIssue(issue) {
+  const reason = String(issue?.state_reason ?? issue?.stateReason ?? '')
+    .trim()
+    .toLowerCase();
+  if (reason === 'not_planned' || reason === 'not planned') {
+    return true;
+  }
+  const labels = issueLabels(issue);
+  return labels.includes('not planned') || labels.includes('not-planned');
+}
+
+function issueTime(issue) {
+  const value = issue?.closed_at || issue?.updated_at || issue?.created_at || '';
+  const time = Date.parse(String(value));
+  return Number.isFinite(time) ? time : 0;
+}
+
+function compareIssuesAscending(left, right) {
+  const byTime = issueTime(left) - issueTime(right);
+  if (byTime !== 0) return byTime;
+  return Number(left?.number ?? 0) - Number(right?.number ?? 0);
+}
+
 function normalizeCurrent(kind, item) {
   return {
     kind,
@@ -256,7 +291,19 @@ for (const item of workflowIndex.workflows ?? []) {
   merged.set(keyOf(normalized.kind, normalized.slug), normalized);
 }
 
-for (const issue of issues) {
+const ignored = [];
+for (const issue of [...issues].sort(compareIssuesAscending)) {
+  if (isNotPlannedIssue(issue)) {
+    try {
+      const parsed = parseIssue(issue);
+      const key = keyOf(parsed.kind, parsed.slug);
+      merged.delete(key);
+      ignored.push({ number: issue.number, key, reason: 'not_planned' });
+    } catch {
+      ignored.push({ number: issue?.number, reason: 'not_planned_unparsed' });
+    }
+    continue;
+  }
   const parsed = parseIssue(issue);
   merged.set(keyOf(parsed.kind, parsed.slug), parsed);
 }
@@ -282,6 +329,10 @@ const workflowsChanged = syncOne('registry/workflows.index.json', 'workflows', w
 
 if (removed.length > 0) {
   console.log(`[sync-index-from-issues] removed stale pointers: ${JSON.stringify(removed)}`);
+}
+
+if (ignored.length > 0) {
+  console.log(`[sync-index-from-issues] ignored not-planned issues: ${JSON.stringify(ignored)}`);
 }
 
 if (!pluginsChanged && !workflowsChanged) {

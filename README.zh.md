@@ -31,7 +31,9 @@
 3. 保留 `register-extension` 标签（模板会默认附带）
 4. 人工审查通过后关闭 issue
 
-只有关闭后的 issue 会进入同步。
+如果审查结论是否决，请使用 `not planned` 方式关闭。被标记为 `not planned` 的 issue 不会进入同步。
+
+只有关闭后且保留 `register-extension` 标签的 issue 才会进入同步候选；`not planned` 会被排除。
 
 ## 注册示例
 
@@ -64,14 +66,16 @@ GitHub Actions 会在以下时机执行同步：
 同步逻辑：
 
 1. 扫描所有已关闭且带 `register-extension` 标签的 issue
-2. 解析并校验 issue 中的扩展指针
-3. 拉取对应扩展仓库，读取 `meta.yaml`，解析当前 commit
-4. 对比 registry 中现有条目，自动处理增删改
-5. 更新 `registry/*.index.json` 并直接提交到 `master`
+2. 排除以 `not planned` 关闭的 issue
+3. 解析并校验 issue 中的扩展指针
+4. 拉取对应扩展仓库，读取 `meta.yaml`，解析当前 commit
+5. 对比 registry 中现有条目，自动处理增删改
+6. 更新 `registry/*.index.json` 并直接提交到 `master`
 
 说明：
 
 - 未关闭的 issue 仅作为待审状态，不会参与 Action 同步
+- 以 `not planned` 关闭的 issue 会被排除；如果它匹配到已有 registry 指针，下一轮同步会把该指针移除
 - 已在 registry 的历史条目，即使没有对应 issue，也不会仅因“缺 issue”被删除
 - 仅在远端仓库不可访问或入口文件失效时，脚本才会清理失效指针
 

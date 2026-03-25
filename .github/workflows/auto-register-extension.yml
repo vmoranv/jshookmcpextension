@@ -1,6 +1,8 @@
 name: Sync Extension Registry
 
 on:
+  issues:
+    types: [closed]
   schedule:
     # 06:00 Asia/Shanghai = 22:00 UTC (previous day)
     - cron: '0 22 * * *'
@@ -11,6 +13,7 @@ permissions:
 
 jobs:
   sync:
+    if: ${{ github.event_name != 'issues' || contains(github.event.issue.labels.*.name, 'register-extension') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -34,6 +37,13 @@ jobs:
               number: issue.number,
               title: issue.title,
               body: issue.body || '',
+              labels: (issue.labels || []).map((label) =>
+                typeof label === 'string' ? label : label?.name
+              ).filter(Boolean),
+              state_reason: issue.state_reason || '',
+              created_at: issue.created_at || '',
+              updated_at: issue.updated_at || '',
+              closed_at: issue.closed_at || '',
             }));
             fs.writeFileSync('_closed_issues.json', JSON.stringify(simplified, null, 2));
             core.setOutput('count', String(simplified.length));
