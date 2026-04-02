@@ -223,7 +223,7 @@ function resolveFromRepo(item) {
     const metaPath = resolve(dir, item.source.subpath, 'meta.yaml');
     const meta = parseMetaYaml(metaPath);
 
-    return {
+    const result = {
       kind: item.kind,
       slug: item.slug,
       id: item.id,
@@ -235,8 +235,11 @@ function resolveFromRepo(item) {
         subpath: item.source.subpath,
         entry: item.source.entry,
       },
-      meta,
     };
+    if (meta !== null) {
+      result.meta = meta;
+    }
+    return result;
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
