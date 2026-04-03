@@ -38,6 +38,7 @@ body:
             - tag1
             - tag2
           ```
+        - Recommended: Include a `docs/SKILL.md` file with usage documentation
         - The sync script will resolve metadata from `meta.yaml` automatically
 
   - type: dropdown

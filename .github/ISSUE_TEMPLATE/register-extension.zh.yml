@@ -38,6 +38,7 @@ body:
             - tag1
             - tag2
           ```
+        - 推荐：包含 `docs/SKILL.md` 文件，提供使用说明
         - 同步脚本会自动从 `meta.yaml` 解析元数据
 
   - type: dropdown
