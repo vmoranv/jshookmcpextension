@@ -20,6 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure git authentication
+        run: |
+          # Configure git to use PAT for github.com
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
       - name: Collect closed register-extension issues
         id: collect
         uses: actions/github-script@v7
