@@ -74,8 +74,11 @@ for (const file of FILES) {
       fail(`${file.path}: invalid entry for ${slug}`);
     }
 
-    if (item.meta !== undefined && (typeof item.meta !== 'object' || item.meta === null || Array.isArray(item.meta))) {
-      fail(`${file.path}: meta must be an object when present for ${slug}`);
+    // meta field is required and must be a non-null object
+    if (item.meta === undefined || item.meta === null) {
+      fail(`${file.path}: meta is required for ${slug}`);
+    } else if (typeof item.meta !== 'object' || Array.isArray(item.meta)) {
+      fail(`${file.path}: meta must be an object for ${slug}`);
     }
   }
 }
