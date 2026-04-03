@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool",
         "ref": "main",
-        "commit": "2799da6f5c0d8e3a8f0b5e3c8d9a7b6c5e4f3a2b",
+        "commit": "2799da66d01fc51daa0a1f9115bbdf7630e334ee",
         "subpath": ".",
         "entry": "manifest.ts"
       },
