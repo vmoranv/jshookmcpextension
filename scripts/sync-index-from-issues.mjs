@@ -321,17 +321,20 @@ for (const issue of [...issues].sort(compareIssuesAscending)) {
 
 const resolved = [];
 const removed = [];
+const skippedIssues = [];
 for (const item of merged.values()) {
   try {
     resolved.push(resolveFromRepo(item));
   } catch (error) {
     console.log(`[sync-index-from-issues] Failed to resolve ${item.kind}/${item.slug}: ${error.message}`);
     if (item.fromIssue) {
-      console.log(`[sync-index-from-issues] This is a new issue, failing fast`);
-      throw error;
+      // New issue but repo is invalid - skip this issue instead of failing
+      console.log(`[sync-index-from-issues] Skipping issue #${item.issueNumber} due to validation failure`);
+      skippedIssues.push({ number: item.issueNumber, slug: item.slug, reason: String(error) });
+      continue;
     }
-    // Repo no longer exists or entry missing - mark for removal
-    console.log(`[sync-index-from-issues] Marking ${item.kind}/${item.slug} for removal`);
+    // Existing index entry with invalid repo - mark for removal
+    console.log(`[sync-index-from-issues] Marking ${item.kind}/${item.slug} for removal from index`);
     removed.push({ kind: item.kind, slug: item.slug, reason: String(error) });
   }
 }
@@ -348,6 +351,10 @@ if (removed.length > 0) {
 
 if (ignored.length > 0) {
   console.log(`[sync-index-from-issues] ignored not-planned issues: ${JSON.stringify(ignored)}`);
+}
+
+if (skippedIssues.length > 0) {
+  console.log(`[sync-index-from-issues] skipped invalid issues: ${JSON.stringify(skippedIssues)}`);
 }
 
 if (!pluginsChanged && !workflowsChanged) {
