@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-03T02:41:46.389Z",
+  "updatedAt": "2026-04-03T02:49:36.848Z",
   "workflows": [
     {
       "slug": "api-probe-batch",
@@ -144,6 +144,24 @@
         "description": "Declarative workflow for opening the latest relevant message in a temporary mailbox.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_open_latest"
+      }
+    },
+    {
+      "slug": "web-api-capture",
+      "id": "workflow.web-api-capture.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture",
+        "ref": "main",
+        "commit": "caec4628814a02035fa14e6fdeb0e26fe5b217d7",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "web-api-capture",
+        "description": "JSHook workflow for web-api-capture",
+        "author": "vmoranv",
+        "tags": ""
       }
     },
     {
