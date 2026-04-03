@@ -1,51 +1,19 @@
 name: 注册扩展（中文）
-description: 注册或更新插件或工作流指针（由每日定时或手动 workflow 同步）
+description: 注册插件或工作流到 registry
 title: "[register] <kind>: <repo>"
 labels: ["register-extension"]
 body:
   - type: markdown
     attributes:
       value: |
-        请保留此 issue 作为 registry 同步的元数据记录。
-        registry 会在 issue 关闭时、每天定时同步，或由维护者手动触发 workflow 提前同步。
-        只需填写 `Kind` 与 `Repository URL`，其余元数据由同步脚本从仓库的 `meta.yaml` 文件自动解析。
-        建议保留默认标题格式：`[register] <kind>: <repo>`。
-        如果审查结论是否决，请将 issue 以 `not planned` 关闭，sync 会自动排除。
-
-  - type: markdown
-    attributes:
-      value: |
-        ### 填写示例
-
-        **插件示例**
-        - 类型：`plugin`
-        - 仓库地址：`https://github.com/example/jshook_plugin_demo`
-        - 标题示例：`[register] plugin: https://github.com/example/jshook_plugin_demo`
-
-        **工作流示例**
-        - 类型：`workflow`
-        - 仓库地址：`https://github.com/example/jshook_workflow_demo`
-        - 标题示例：`[register] workflow: https://github.com/example/jshook_workflow_demo`
-
-        **要求**
-        - 仓库必须可公开访问
-        - 仓库根目录必须包含 `meta.yaml` 文件，格式如下：
-          ```yaml
-          name: extension-name
-          description: 扩展的简要描述
-          author: your-github-username
-          tags:
-            - tag1
-            - tag2
-          ```
-        - 推荐：包含 `docs/SKILL.md` 文件，提供使用说明
-        - 同步脚本会自动从 `meta.yaml` 解析元数据
+        **只需填写 2 项：** 类型 + 仓库地址。
+        所有元数据由同步脚本从仓库的 `meta.yaml` 自动提取。
+        Registry 在 issue 关闭时更新（每日定时或手动触发）。
 
   - type: dropdown
     id: kind
     attributes:
       label: 类型
-      description: 选择扩展类型
       options:
         - plugin
         - workflow
@@ -56,7 +24,6 @@ body:
     id: repository
     attributes:
       label: 仓库地址
-      description: GitHub 仓库地址，例如插件仓库或工作流仓库
       placeholder: https://github.com/example/jshook_plugin_demo
     validations:
       required: true

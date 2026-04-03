@@ -1,51 +1,19 @@
 name: Register Extension (English)
-description: Register or update a plugin/workflow pointer (processed by daily sync or a manual workflow run)
+description: Register a plugin/workflow for registry sync
 title: "[register] <kind>: <repo>"
 labels: ["register-extension"]
 body:
   - type: markdown
     attributes:
       value: |
-        Keep this issue as the metadata record for registry sync.
-        Registry updates are applied on issue close, by the daily scheduled workflow, or sooner if someone manually runs the sync workflow.
-        Only `Kind` and `Repository URL` are required. All other metadata is derived automatically by the sync script from the repository's `meta.yaml` file.
-        Keep the default issue title format if possible: `[register] <kind>: <repo>`.
-        If review rejects the registration, close the issue as `not planned` so sync will exclude it.
-
-  - type: markdown
-    attributes:
-      value: |
-        ### Examples
-
-        **Plugin example**
-        - Kind: `plugin`
-        - Repository URL: `https://github.com/example/jshook_plugin_demo`
-        - Title example: `[register] plugin: https://github.com/example/jshook_plugin_demo`
-
-        **Workflow example**
-        - Kind: `workflow`
-        - Repository URL: `https://github.com/example/jshook_workflow_demo`
-        - Title example: `[register] workflow: https://github.com/example/jshook_workflow_demo`
-
-        **Requirements**
-        - The repository must be publicly accessible
-        - The repository must have a `meta.yaml` file in the root directory with the following format:
-          ```yaml
-          name: extension-name
-          description: A brief description of the extension
-          author: your-github-username
-          tags:
-            - tag1
-            - tag2
-          ```
-        - Recommended: Include a `docs/SKILL.md` file with usage documentation
-        - The sync script will resolve metadata from `meta.yaml` automatically
+        **Only 2 fields required:** Kind + Repository URL.
+        All metadata is auto-extracted from the repo's `meta.yaml` by the sync script.
+        Registry updates happen on issue close (daily scheduled workflow or manual trigger).
 
   - type: dropdown
     id: kind
     attributes:
       label: Kind
-      description: Select the extension kind
       options:
         - plugin
         - workflow
@@ -56,7 +24,6 @@ body:
     id: repository
     attributes:
       label: Repository URL
-      description: GitHub repository URL, for example a plugin or workflow repository
       placeholder: https://github.com/example/jshook_plugin_demo
     validations:
       required: true
