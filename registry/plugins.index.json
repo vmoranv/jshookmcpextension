@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-03T12:30:00.000Z",
+  "updatedAt": "2026-04-03T22:19:13.072Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -27,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_demo",
         "ref": "main",
-        "commit": "49fa982",
+        "commit": "49fa982bebdf6d298c7d9e2b22b39374defe22cb",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -35,7 +35,7 @@
         "name": "Demo Plugin",
         "description": "A reference plugin showing env defaults, built-in tool invocation, and optional HTTP probing.",
         "author": "vmoranv",
-        "source_repo": "https://github.com/vmoranv/jshook_plugin_demo"
+        "source_repo": "local-demo"
       }
     },
     {
@@ -45,7 +45,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge",
         "ref": "main",
-        "commit": "7bb3ce8",
+        "commit": "7bb3ce8173168e26a0d0f7f658e4be0be11f8539",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -63,7 +63,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge",
         "ref": "main",
-        "commit": "184011e",
+        "commit": "184011eb897033e88ac1b615e260480733d91b02",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -81,7 +81,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge",
         "ref": "main",
-        "commit": "eb2748d",
+        "commit": "eb2748de8bbb0ae45a3c1430ff53b8541384907b",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -99,7 +99,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge",
         "ref": "main",
-        "commit": "bb699b9",
+        "commit": "bb699b9b4548dc3c7b7cf6e9341bb6cef49356c3",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -117,7 +117,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_knowledge_base",
         "ref": "main",
-        "commit": "3886ff9",
+        "commit": "3886ff95490704ac28c299a27aaa3ae865237f73",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -135,13 +135,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_mission_pack",
         "ref": "main",
-        "commit": "81f3cd4",
+        "commit": "81f3cd473fa38f71c0f27087533c9faea2720520",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
         "name": "mission-pack",
-        "description": "Scaffold plugin for externalizing built-in MissionWorkflowRegistry mission packs from jshookmcp core.",
+        "description": "Plugin for externalizing built-in MissionWorkflowRegistry mission presets from jshookmcp core.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_mission_pack"
       }
@@ -153,7 +153,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_script_presets",
         "ref": "main",
-        "commit": "5742629",
+        "commit": "5742629386768777e2e721bd5bcc250213d15e6b",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -171,14 +171,14 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_template",
         "ref": "main",
-        "commit": "7b07dc9",
+        "commit": "7b07dc9a10848cec3a286834dfc0503ebe8c1af8",
         "subpath": ".",
         "entry": "manifest.ts"
       },
       "meta": {
         "name": "JSHook Plugin Template",
         "description": "TypeScript-first template plugin showing createExtension(), built-in tool invocation, Promise.all parallel reads, and minimal permissions.",
-        "author": "vmoranv",
+        "author": "your-team",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_template"
       }
     },
@@ -189,7 +189,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call",
         "ref": "main",
-        "commit": "623e3fc",
+        "commit": "623e3fcfb5e75f12c2b8301808a316f8b2f3b759",
         "subpath": ".",
         "entry": "manifest.ts"
       },
