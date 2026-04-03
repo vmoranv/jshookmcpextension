@@ -24,6 +24,9 @@ jobs:
         run: |
           # Configure git to use PAT for github.com
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          # Also export GH_TOKEN for gh CLI and potential script usage
+          echo "GH_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+          echo "GIT_ASKPASS=echo" >> $GITHUB_ENV
 
       - name: Collect closed register-extension issues
         id: collect
