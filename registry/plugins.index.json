@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-03-25T09:53:11.746Z",
+  "updatedAt": "2026-04-03T03:24:17.721Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -162,6 +162,24 @@
         "description": "Scaffold plugin for externalizing built-in page script preset packs from jshookmcp core.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_script_presets"
+      }
+    },
+    {
+      "slug": "template",
+      "id": "io.github.vmoranv.template",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_template",
+        "ref": "main",
+        "commit": "65e83a1cb4b44ff3dc29763b42bec92fe6250c51",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "JSHook Plugin Template",
+        "description": "TypeScript-first template plugin showing createExtension(), built-in tool invocation, Promise.all parallel reads, and minimal permissions.",
+        "author": "your-team",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_template"
       }
     },
     {

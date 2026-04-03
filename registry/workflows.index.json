@@ -1,7 +1,43 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-03T02:49:36.848Z",
+  "updatedAt": "2026-04-03T03:24:17.761Z",
   "workflows": [
+    {
+      "slug": "anti-bot-diagnoser",
+      "id": "workflow.anti-bot-diagnoser.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_anti_bot_diagnoser",
+        "ref": "main",
+        "commit": "b7e270de2a0cbb90ed431bd9de4fcd101cc53439",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "anti-bot-diagnoser",
+        "description": "JSHook workflow for anti-bot-diagnoser",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "api-openapi-probe",
+      "id": "workflow.api-openapi-probe.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_api_openapi_probe",
+        "ref": "main",
+        "commit": "94e1573fef500945d2da18f1cadda68b9187f22f",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "api-openapi-probe",
+        "description": "JSHook workflow for api-openapi-probe",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
     {
       "slug": "api-probe-batch",
       "id": "workflow.api-probe-batch.v1",
@@ -39,6 +75,42 @@
       }
     },
     {
+      "slug": "auth-extract",
+      "id": "workflow.auth-extract.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_auth_extract",
+        "ref": "main",
+        "commit": "abcb3e8ef8e54a9742f1f6d51edbb2e551e72b40",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "auth-extract",
+        "description": "JSHook workflow for auth-extract",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "auth-surface-mapper",
+      "id": "workflow.auth-surface-mapper.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_auth_surface_mapper",
+        "ref": "main",
+        "commit": "35ea9b8c9d815c6a7ae9cff7f6f6a472765df2cc",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "auth-surface-mapper",
+        "description": "JSHook workflow for auth-surface-mapper",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
       "slug": "batch-register",
       "id": "workflow.batch-register.v1",
       "source": {
@@ -54,6 +126,96 @@
         "description": "Declarative workflow for parallel account registration with retry and branch summary.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_batch_register"
+      }
+    },
+    {
+      "slug": "bundle-recovery",
+      "id": "workflow.bundle-recovery.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_bundle_recovery",
+        "ref": "main",
+        "commit": "0dd0e8d12c89c5deb8bacd8c158a3daaeeda3023",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "bundle-recovery",
+        "description": "JSHook workflow for bundle-recovery",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "challenge-detector",
+      "id": "workflow.challenge-detector.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_challenge_detector",
+        "ref": "main",
+        "commit": "f050d18394c908485771e79a3778e9711724f073",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "challenge-detector",
+        "description": "JSHook workflow for challenge-detector",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "deobfuscation-pipeline",
+      "id": "workflow.deobfuscation-pipeline.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_deobfuscation_pipeline",
+        "ref": "main",
+        "commit": "97f3401d7e1ba446423a84e66be190d633f7d463",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "deobfuscation-pipeline",
+        "description": "JSHook workflow for deobfuscation-pipeline",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "electron-bridge-mapper",
+      "id": "workflow.electron-bridge-mapper.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_electron_bridge_mapper",
+        "ref": "main",
+        "commit": "0e2313f0e783f2341ca36dfd164ce7acce17cc32",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "electron-bridge-mapper",
+        "description": "JSHook workflow for electron-bridge-mapper",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "evidence-pack",
+      "id": "workflow.evidence-pack.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_evidence_pack",
+        "ref": "main",
+        "commit": "c169cbab4db914bb07481342ac27ddad049d85b1",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "evidence-pack",
+        "description": "JSHook workflow for evidence-pack",
+        "author": "vmoranv",
+        "tags": ""
       }
     },
     {
@@ -75,6 +237,42 @@
       }
     },
     {
+      "slug": "protocol-registry",
+      "id": "workflow.protocol-registry.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_protocol_registry",
+        "ref": "main",
+        "commit": "4ac834f34d0e45853ac5582e5fef9cb430a229bc",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "protocol-registry",
+        "description": "JSHook workflow for protocol-registry",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "qwen-mail-open-latest",
+      "id": "workflow.qwen-mail-open-latest.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_qwen_mail_open_latest",
+        "ref": "main",
+        "commit": "45de685f2429b752a01a0b3a5a1f26205536280f",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "qwen-mail",
+        "description": "Qwen mail operations (activate + open latest)",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
       "slug": "register-account-flow",
       "id": "workflow.register-account-flow.v1",
       "source": {
@@ -93,6 +291,24 @@
       }
     },
     {
+      "slug": "replay-lab",
+      "id": "workflow.replay-lab.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_replay_lab",
+        "ref": "main",
+        "commit": "e6125eee343b3ef7e39f37ec69144d4d774b7eea",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "replay-lab",
+        "description": "JSHook workflow for replay-lab",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
       "slug": "script-evidence-scan",
       "id": "workflow.script-evidence-scan.v1",
       "source": {
@@ -108,6 +324,42 @@
         "description": "Declarative workflow for extracting evidence from browser-loaded scripts via get_all_scripts and get_script_source.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan"
+      }
+    },
+    {
+      "slug": "signature-hunter",
+      "id": "workflow.signature-hunter.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_signature_hunter",
+        "ref": "main",
+        "commit": "9d24e172bbb841ae8d6516ab50757857da9b8bc5",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "signature-hunter",
+        "description": "JSHook workflow for signature-hunter",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "signing-lineage",
+      "id": "workflow.signing-lineage.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_signing_lineage",
+        "ref": "main",
+        "commit": "31be5dc2e195a23ce78e7f2d01e209a66c82f5cd",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "signing-lineage",
+        "description": "JSHook workflow for signing-lineage",
+        "author": "vmoranv",
+        "tags": ""
       }
     },
     {
@@ -147,19 +399,19 @@
       }
     },
     {
-      "slug": "web-api-capture",
-      "id": "workflow.web-api-capture.v1",
+      "slug": "template",
+      "id": "workflow.template.v1",
       "source": {
         "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture",
+        "repo": "https://github.com/vmoranv/jshook_workflow_template",
         "ref": "main",
-        "commit": "caec4628814a02035fa14e6fdeb0e26fe5b217d7",
+        "commit": "9eafefe92eaf4c5cf7b07fe772eee2553a36fb2b",
         "subpath": ".",
         "entry": "workflow.ts"
       },
       "meta": {
-        "name": "web-api-capture",
-        "description": "JSHook workflow for web-api-capture",
+        "name": "template",
+        "description": "JSHook workflow for template",
         "author": "vmoranv",
         "tags": ""
       }
@@ -180,6 +432,24 @@
         "description": "Declarative workflow for navigation, action replay, request capture, auth extraction, and HAR/report export.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session"
+      }
+    },
+    {
+      "slug": "ws-protocol-lifter",
+      "id": "workflow.ws-protocol-lifter.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_ws_protocol_lifter",
+        "ref": "main",
+        "commit": "423d61d2b0f678e7a6cdffe39c73b2d9bbd385ad",
+        "subpath": ".",
+        "entry": "workflow.ts"
+      },
+      "meta": {
+        "name": "ws-protocol-lifter",
+        "description": "JSHook workflow for ws-protocol-lifter",
+        "author": "vmoranv",
+        "tags": ""
       }
     }
   ]
