@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-03T00:54:22.916Z",
+  "updatedAt": "2026-04-03T02:41:46.389Z",
   "workflows": [
     {
       "slug": "api-probe-batch",
@@ -27,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_auth_bootstrap",
         "ref": "main",
-        "commit": "6e59bdbb76131b2faffc2e016328f6dfc7da5ce2",
+        "commit": "55c1a63307b0848d09edc824fe6419f6df48f8ef",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -99,7 +99,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan",
         "ref": "main",
-        "commit": "33347b260a3a1dee6549ef2cb7b6bd0b15874f54",
+        "commit": "eb2485b0720c5e3bae72ce3ce381ceed677ee320",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -117,7 +117,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_extract_link",
         "ref": "main",
-        "commit": "bb43e94a6370974b14791ec3d83d57addd663eb8",
+        "commit": "87adfb0b7ebf1e89a304574a72703158e5f6a7ee",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -135,7 +135,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_open_latest",
         "ref": "main",
-        "commit": "32261b9e8178c492f77feb0345ddd954dc36d975",
+        "commit": "c04438ffffaa3b87e417f13d3607d01aa9dadb73",
         "subpath": ".",
         "entry": "workflow.ts"
       },
