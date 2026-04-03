@@ -204,39 +204,20 @@ function normalizeCurrent(kind, item) {
 function resolveFromRepo(item) {
   const dir = mkdtempSync(join(tmpdir(), 'jshook-registry-sync-'));
   try {
-    // Try using gh CLI first (works in GitHub Actions with built-in auth)
-    let cloneFailed = false;
-    try {
-      // Extract owner/repo from URL like https://github.com/owner/repo
-      const match = item.source.repo.match(/github\.com\/([^/]+)\/([^/]+?)(?:\.git)?$/i);
-      if (match) {
-        const repoRef = `${match[1]}/${match[2]}`;
-        run('gh', ['repo', 'clone', repoRef, dir, '--', '--depth', '1']);
-        run('git', ['-C', dir, 'fetch', 'origin', item.source.ref]);
-        run('git', ['-C', dir, 'checkout', item.source.ref]);
-      } else {
-        throw new Error('Invalid GitHub repo URL');
-      }
-    } catch (ghError) {
-      cloneFailed = true;
-      // Fallback to git clone (may work with git config authentication)
-      try {
-        run('git', ['clone', '--depth', '1', '--branch', item.source.ref, item.source.repo, dir]);
-      } catch {
-        run('git', ['clone', item.source.repo, dir]);
-        run('git', ['-C', dir, 'checkout', item.source.ref]);
-      }
+    // Use gh CLI for authentication (works in GitHub Actions with built-in auth)
+    // Extract owner/repo from URL like https://github.com/owner/repo
+    const match = item.source.repo.match(/github\.com\/([^/]+)\/([^/]+?)(?:\.git)?$/i);
+    if (!match) {
+      throw new Error('Invalid GitHub repo URL: ' + item.source.repo);
     }
+    const repoRef = `${match[1]}/${match[2]}`;
 
-    // If gh worked but git didn't, fetch the commit again
-    if (!cloneFailed) {
-      try {
-        run('git', ['-C', dir, 'rev-parse', 'HEAD']);
-      } catch {
-        run('git', ['-C', dir, 'fetch', 'origin', item.source.ref]);
-        run('git', ['-C', dir, 'checkout', item.source.ref]);
-      }
-    }
+    // Clone using gh CLI (automatically uses GH_TOKEN for auth)
+    run('gh', ['repo', 'clone', repoRef, dir, '--', '--depth', '1']);
+
+    // Checkout the specific ref
+    run('git', ['-C', dir, 'fetch', 'origin', item.source.ref]);
+    run('git', ['-C', dir, 'checkout', item.source.ref]);
 
     const commit = run('git', ['-C', dir, 'rev-parse', 'HEAD']);
     const entryPath = resolve(dir, item.source.subpath, item.source.entry);
