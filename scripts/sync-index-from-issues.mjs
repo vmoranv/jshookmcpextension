@@ -325,9 +325,13 @@ for (const item of merged.values()) {
   try {
     resolved.push(resolveFromRepo(item));
   } catch (error) {
+    console.log(`[sync-index-from-issues] Failed to resolve ${item.kind}/${item.slug}: ${error.message}`);
     if (item.fromIssue) {
+      console.log(`[sync-index-from-issues] This is a new issue, failing fast`);
       throw error;
     }
+    // Repo no longer exists or entry missing - mark for removal
+    console.log(`[sync-index-from-issues] Marking ${item.kind}/${item.slug} for removal`);
     removed.push({ kind: item.kind, slug: item.slug, reason: String(error) });
   }
 }
