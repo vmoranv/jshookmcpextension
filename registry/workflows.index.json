@@ -1,19 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-02T23:45:31.301Z",
+  "updatedAt": "2026-04-03T00:54:22.916Z",
   "workflows": [
-    {
-      "slug": "api-openapi-probe",
-      "id": "workflow.api-openapi-probe.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_api_openapi_probe",
-        "ref": "master",
-        "commit": "3e625bd160d56c8a22e4368913cb0c37a8c7bac5",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
     {
       "slug": "api-probe-batch",
       "id": "workflow.api-probe-batch.v1",
@@ -51,30 +39,6 @@
       }
     },
     {
-      "slug": "auth-extract",
-      "id": "workflow.auth-extract.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_auth_extract",
-        "ref": "master",
-        "commit": "2e44dde02bbe021d2530e9753ef0a29cccec422b",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
-      "slug": "auth-surface-mapper",
-      "id": "workflow.auth-surface-mapper.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_auth_surface_mapper",
-        "ref": "master",
-        "commit": "185bf37d0ef43bbdaf87fc0f786b1be74ae5f8a7",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
       "slug": "batch-register",
       "id": "workflow.batch-register.v1",
       "source": {
@@ -90,42 +54,6 @@
         "description": "Declarative workflow for parallel account registration with retry and branch summary.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_batch_register"
-      }
-    },
-    {
-      "slug": "challenge-detector",
-      "id": "workflow.challenge-detector.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_challenge_detector",
-        "ref": "master",
-        "commit": "d3f1b95f535628a86a7083e0a14b099ab129fd4c",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
-      "slug": "deobfuscation-pipeline",
-      "id": "workflow.deobfuscation-pipeline.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_deobfuscation_pipeline",
-        "ref": "master",
-        "commit": "50bbbfea6e3769ec5719f062f351122af637ad17",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
-      "slug": "electron-bridge-mapper",
-      "id": "workflow.electron-bridge-mapper.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_electron_bridge_mapper",
-        "ref": "master",
-        "commit": "96a3f24595d08545ffd5a74b2e929645f7327141",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
       }
     },
     {
@@ -147,42 +75,6 @@
       }
     },
     {
-      "slug": "protocol-registry",
-      "id": "workflow.protocol-registry.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_protocol_registry",
-        "ref": "master",
-        "commit": "fc9c98939ed1e926745f361368cc5f06c82341ee",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
-      "slug": "qwen-mail-activate",
-      "id": "workflow.qwen-mail-activate.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_qwen_mail_activate",
-        "ref": "master",
-        "commit": "a96453192fee1cd3430689799ea273aacfb36594",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
-      "slug": "qwen-mail-open-latest",
-      "id": "workflow.qwen-mail-open-latest.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_qwen_mail_open_latest",
-        "ref": "master",
-        "commit": "8ea99dffc8c8f59860afb8bf5c6d9b70acbff15b",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
       "slug": "register-account-flow",
       "id": "workflow.register-account-flow.v1",
       "source": {
@@ -201,18 +93,6 @@
       }
     },
     {
-      "slug": "replay-lab",
-      "id": "workflow.replay-lab.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_replay_lab",
-        "ref": "master",
-        "commit": "d79f6b8db67084871b94dc5693611e2e4b084615",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
       "slug": "script-evidence-scan",
       "id": "workflow.script-evidence-scan.v1",
       "source": {
@@ -228,18 +108,6 @@
         "description": "Declarative workflow for extracting evidence from browser-loaded scripts via get_all_scripts and get_script_source.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan"
-      }
-    },
-    {
-      "slug": "signing-lineage",
-      "id": "workflow.signing-lineage.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_signing_lineage",
-        "ref": "master",
-        "commit": "c9d7e84a9cd976e63d398067e54264b65bbb13bf",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
       }
     },
     {
@@ -279,25 +147,13 @@
       }
     },
     {
-      "slug": "web-api-capture",
-      "id": "workflow.web-api-capture.v1",
-      "source": {
-        "type": "git",
-        "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture",
-        "ref": "master",
-        "commit": "45aa412d35a13ab1643371e9e08c7d7c5132fb38",
-        "subpath": ".",
-        "entry": "dist/workflow.js"
-      }
-    },
-    {
       "slug": "web-api-capture-session",
       "id": "workflow.web-api-capture-session.v1",
       "source": {
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session",
         "ref": "main",
-        "commit": "45b2b56f918eb9733808ff2b28a85484203b8161",
+        "commit": "087d1ee8d1724b11df0a13b3efb699e8edf71fdd",
         "subpath": ".",
         "entry": "workflow.ts"
       },
