@@ -8,7 +8,7 @@ body:
       value: |
         请保留此 issue 作为 registry 同步的元数据记录。
         registry 会在 issue 关闭时、每天定时同步，或由维护者手动触发 workflow 提前同步。
-        只需填写 `Kind` 与 `Repository URL`，其余元信息由同步脚本自动解析。
+        只需填写 `Kind` 与 `Repository URL`，其余元数据由同步脚本从仓库的 `meta.yaml` 文件自动解析。
         建议保留默认标题格式：`[register] <kind>: <repo>`。
         如果审查结论是否决，请将 issue 以 `not planned` 关闭，sync 会自动排除。
 
@@ -28,8 +28,17 @@ body:
         - 标题示例：`[register] workflow: https://github.com/example/jshook_workflow_demo`
 
         **要求**
-        - 仓库应可公开访问
-        - 同步脚本会自动解析元信息
+        - 仓库必须可公开访问
+        - 仓库根目录必须包含 `meta.yaml` 文件，格式如下：
+          ```yaml
+          name: extension-name
+          description: 扩展的简要描述
+          author: your-github-username
+          tags:
+            - tag1
+            - tag2
+          ```
+        - 同步脚本会自动从 `meta.yaml` 解析元数据
 
   - type: dropdown
     id: kind

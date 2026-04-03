@@ -8,7 +8,7 @@ body:
       value: |
         Keep this issue as the metadata record for registry sync.
         Registry updates are applied on issue close, by the daily scheduled workflow, or sooner if someone manually runs the sync workflow.
-        Only `Kind` and `Repository URL` are required. All other metadata is derived automatically by the sync script.
+        Only `Kind` and `Repository URL` are required. All other metadata is derived automatically by the sync script from the repository's `meta.yaml` file.
         Keep the default issue title format if possible: `[register] <kind>: <repo>`.
         If review rejects the registration, close the issue as `not planned` so sync will exclude it.
 
@@ -28,8 +28,17 @@ body:
         - Title example: `[register] workflow: https://github.com/example/jshook_workflow_demo`
 
         **Requirements**
-        - The repository should be publicly accessible
-        - The sync script will resolve metadata automatically
+        - The repository must be publicly accessible
+        - The repository must have a `meta.yaml` file in the root directory with the following format:
+          ```yaml
+          name: extension-name
+          description: A brief description of the extension
+          author: your-github-username
+          tags:
+            - tag1
+            - tag2
+          ```
+        - The sync script will resolve metadata from `meta.yaml` automatically
 
   - type: dropdown
     id: kind
