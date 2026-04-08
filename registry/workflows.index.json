@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-03T22:19:13.075Z",
+  "updatedAt": "2026-04-08T05:36:04.628Z",
   "workflows": [
     {
       "slug": "anti-bot-diagnoser",
@@ -243,7 +243,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_protocol_registry",
         "ref": "main",
-        "commit": "fa70c7fdb30ad64fd27f2db7ceaaa42e93aeb1dc",
+        "commit": "ad8a127cb1613e791222326e30fbd67c10d442f1",
         "subpath": ".",
         "entry": "workflow.ts"
       },
