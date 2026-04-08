@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-04T22:15:35.952Z",
+  "updatedAt": "2026-04-08T05:41:30.658Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -21,6 +21,24 @@
       }
     },
     {
+      "slug": "ctf-submit",
+      "id": "io.github.vmoranv.ctf-submit",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_ctf_submit",
+        "ref": "master",
+        "commit": "da835202f750d68e1b897d527326eff1b67b00f0",
+        "subpath": ".",
+        "entry": "src/index.ts"
+      },
+      "meta": {
+        "name": "ctf-submit",
+        "description": "JSHook plugin for ctf-submit",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
       "slug": "demo",
       "id": "io.github.vmoranv.demo",
       "source": {
@@ -36,6 +54,24 @@
         "description": "A reference plugin showing env defaults, built-in tool invocation, and optional HTTP probing.",
         "author": "vmoranv",
         "source_repo": "local-demo"
+      }
+    },
+    {
+      "slug": "exploit-library",
+      "id": "io.github.vmoranv.exploit-library",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_exploit_library",
+        "ref": "master",
+        "commit": "589cea0d2ed13ae2d9040bc4bc8180efbde217f0",
+        "subpath": ".",
+        "entry": "src/index.ts"
+      },
+      "meta": {
+        "name": "exploit-library",
+        "description": "JSHook plugin for exploit-library",
+        "author": "vmoranv",
+        "tags": ""
       }
     },
     {
@@ -144,6 +180,24 @@
         "description": "Plugin for externalizing built-in MissionWorkflowRegistry mission presets from jshookmcp core.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_mission_pack"
+      }
+    },
+    {
+      "slug": "report-generator",
+      "id": "io.github.vmoranv.report-generator",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_report_generator",
+        "ref": "master",
+        "commit": "de201b164111a799e7a467cde3397fc3c8dc722e",
+        "subpath": ".",
+        "entry": "src/index.ts"
+      },
+      "meta": {
+        "name": "report-generator",
+        "description": "JSHook plugin for report-generator",
+        "author": "vmoranv",
+        "tags": ""
       }
     },
     {

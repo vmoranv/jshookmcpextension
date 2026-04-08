@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-08T05:36:04.628Z",
+  "updatedAt": "2026-04-08T05:41:30.697Z",
   "workflows": [
     {
       "slug": "anti-bot-diagnoser",
@@ -106,6 +106,42 @@
       "meta": {
         "name": "auth-surface-mapper",
         "description": "JSHook workflow for auth-surface-mapper",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "auto-assign",
+      "id": "workflow.auto-assign.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_auto_assign",
+        "ref": "master",
+        "commit": "21efd7297c4cf25d311de07692a81f88acae7ffe",
+        "subpath": ".",
+        "entry": "src/index.ts"
+      },
+      "meta": {
+        "name": "auto-assign",
+        "description": "JSHook workflow for auto-assign",
+        "author": "vmoranv",
+        "tags": ""
+      }
+    },
+    {
+      "slug": "batch-operations",
+      "id": "workflow.batch-operations.v1",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_workflow_batch_operations",
+        "ref": "master",
+        "commit": "1346c120b5c7e43b8235831109761c7283fbeb9b",
+        "subpath": ".",
+        "entry": "src/index.ts"
+      },
+      "meta": {
+        "name": "batch-operations",
+        "description": "JSHook workflow for batch-operations",
         "author": "vmoranv",
         "tags": ""
       }
