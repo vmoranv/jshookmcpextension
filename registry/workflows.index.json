@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-08T05:41:30.697Z",
+  "updatedAt": "2026-04-14T22:34:24.241Z",
   "workflows": [
     {
       "slug": "anti-bot-diagnoser",
@@ -459,13 +459,13 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session",
         "ref": "main",
-        "commit": "087d1ee8d1724b11df0a13b3efb699e8edf71fdd",
+        "commit": "dbad52f1130a664cefbc2be58bbe3629c8febae0",
         "subpath": ".",
         "entry": "workflow.ts"
       },
       "meta": {
         "name": "web-api-capture-session",
-        "description": "Declarative workflow for navigation, action replay, request capture, auth extraction, and HAR/report export.",
+        "description": "Self-contained workflow for navigation, action replay, request capture, auth extraction, and optional HAR export.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session"
       }
