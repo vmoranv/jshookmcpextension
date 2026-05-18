@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-04-08T05:41:30.658Z",
+  "updatedAt": "2026-05-18T22:44:14.215Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -225,7 +225,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_template",
         "ref": "main",
-        "commit": "7b07dc9a10848cec3a286834dfc0503ebe8c1af8",
+        "commit": "7879af85c92453a6010aa72142ff66e10b4232e6",
         "subpath": ".",
         "entry": "manifest.ts"
       },
