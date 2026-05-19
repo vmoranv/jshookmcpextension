@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-18T22:44:14.215Z",
+  "updatedAt": "2026-05-19T22:54:12.758Z",
   "plugins": [
     {
       "slug": "burp-mcp-sse-call-tool",
@@ -27,7 +27,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ctf_submit",
         "ref": "master",
-        "commit": "da835202f750d68e1b897d527326eff1b67b00f0",
+        "commit": "02e5108391b31a455228d27b3c332d7109e7819b",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -35,6 +35,7 @@
         "name": "ctf-submit",
         "description": "JSHook plugin for ctf-submit",
         "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_ctf_submit",
         "tags": ""
       }
     },
@@ -45,7 +46,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_demo",
         "ref": "main",
-        "commit": "dd413f16f760d0ab3dfb572222fa3557ab7a9dea",
+        "commit": "ed4386da56fed5846cf645acd05166cb4983fb5a",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -53,7 +54,7 @@
         "name": "Demo Plugin",
         "description": "A reference plugin showing env defaults, built-in tool invocation, and optional HTTP probing.",
         "author": "vmoranv",
-        "source_repo": "local-demo"
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_demo"
       }
     },
     {
@@ -63,7 +64,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_exploit_library",
         "ref": "master",
-        "commit": "589cea0d2ed13ae2d9040bc4bc8180efbde217f0",
+        "commit": "2e9ec6dc35f900e04a89b3416f4ee0f3179f90fa",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -71,6 +72,7 @@
         "name": "exploit-library",
         "description": "JSHook plugin for exploit-library",
         "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_exploit_library",
         "tags": ""
       }
     },
@@ -189,7 +191,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_report_generator",
         "ref": "master",
-        "commit": "de201b164111a799e7a467cde3397fc3c8dc722e",
+        "commit": "b2eb99a078c2b7c2c8f4d0e2b8ec2dbdf2e36fe5",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -197,6 +199,7 @@
         "name": "report-generator",
         "description": "JSHook plugin for report-generator",
         "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_report_generator",
         "tags": ""
       }
     },
@@ -225,7 +228,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_template",
         "ref": "main",
-        "commit": "7879af85c92453a6010aa72142ff66e10b4232e6",
+        "commit": "6772f3d8077b619255f6ff531c1e3157d5533e73",
         "subpath": ".",
         "entry": "manifest.ts"
       },
