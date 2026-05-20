@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-19T22:54:12.758Z",
+  "updatedAt": "2026-05-20T05:07:20.718Z",
   "plugins": [
+    {
+      "slug": "android-archive-index",
+      "id": "io.github.vmoranv.android-archive-index",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_archive_index",
+        "ref": "main",
+        "commit": "b8f5128c69d87f76840a28385bec2c09ba3900ec",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Archive Index",
+        "description": "Compute APK archive hashes and file-level triage metadata.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_archive_index"
+      }
+    },
     {
       "slug": "burp-mcp-sse-call-tool",
       "id": "io.github.vmoranv.burp-mcp-sse-call-tool",
