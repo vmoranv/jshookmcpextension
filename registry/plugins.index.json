@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-20T05:07:20.718Z",
+  "updatedAt": "2026-05-20T05:26:24.727Z",
   "plugins": [
     {
       "slug": "android-archive-index",
@@ -18,6 +18,114 @@
         "description": "Compute APK archive hashes and file-level triage metadata.",
         "author": "vmoranv",
         "source_repo": "https://github.com/vmoranv/jshook_plugin_android_archive_index"
+      }
+    },
+    {
+      "slug": "android-component-audit",
+      "id": "io.github.vmoranv.android-component-audit",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_component_audit",
+        "ref": "main",
+        "commit": "494e9d176c908d25e8e926b1763aa240b77e9682",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Component Audit",
+        "description": "Audit manifest-declared Android components, exported surfaces, and deep link entrypoints.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_component_audit"
+      }
+    },
+    {
+      "slug": "android-flutter-probe",
+      "id": "io.github.vmoranv.android-flutter-probe",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_flutter_probe",
+        "ref": "main",
+        "commit": "2289964c8084417ab6578a5ee9246cbe26c672d1",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Flutter Probe",
+        "description": "Detect Flutter runtime packaging signals from manifest and native library structure.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_flutter_probe"
+      }
+    },
+    {
+      "slug": "android-manifest-intel",
+      "id": "io.github.vmoranv.android-manifest-intel",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_manifest_intel",
+        "ref": "main",
+        "commit": "4ebc7d9fcc6c1b64d6bf5182794c4bf762205e5f",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Manifest Intel",
+        "description": "Extract package, SDK, application, permission, and component metadata from AndroidManifest.xml.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_manifest_intel"
+      }
+    },
+    {
+      "slug": "android-native-inventory",
+      "id": "io.github.vmoranv.android-native-inventory",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_native_inventory",
+        "ref": "main",
+        "commit": "aea10d51fc44a487fca18e7a54965be9d740dc49",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Native Inventory",
+        "description": "Inventory APK packaged native libraries, ABI coverage, and reverse-engineering hints.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_native_inventory"
+      }
+    },
+    {
+      "slug": "android-permission-audit",
+      "id": "io.github.vmoranv.android-permission-audit",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_permission_audit",
+        "ref": "main",
+        "commit": "b9b34161c4b22ae9cf75a40fc1bbb568706e8a8d",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Permission Audit",
+        "description": "Audit dangerous permissions, special privileges, and permission-related manifest risk signals.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_permission_audit"
+      }
+    },
+    {
+      "slug": "android-smali-search",
+      "id": "io.github.vmoranv.android-smali-search",
+      "source": {
+        "type": "git",
+        "repo": "https://github.com/vmoranv/jshook_plugin_android_smali_search",
+        "ref": "main",
+        "commit": "c0a91d82ac1fb3f135e57405bedbe799fac3bfaf",
+        "subpath": ".",
+        "entry": "manifest.ts"
+      },
+      "meta": {
+        "name": "Android Smali Search",
+        "description": "Decode APKs with apktool and search smali/resources for analyst-supplied strings.",
+        "author": "vmoranv",
+        "source_repo": "https://github.com/vmoranv/jshook_plugin_android_smali_search"
       }
     },
     {
