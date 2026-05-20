@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-20T05:26:24.727Z",
+  "updatedAt": "2026-05-20T23:01:28.538Z",
   "plugins": [
     {
       "slug": "android-archive-index",
@@ -135,7 +135,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_burp_mcp_sse_call_tool",
         "ref": "main",
-        "commit": "97c19cd20abece5cb7a68d8a16513b9fa69c8ec9",
+        "commit": "2075b1a9068826bd9f6ad36c91e31d6c5b5214af",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -153,7 +153,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ctf_submit",
         "ref": "master",
-        "commit": "02e5108391b31a455228d27b3c332d7109e7819b",
+        "commit": "e0494a2845a31eb98714b09a8d6b872326a66b7a",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -172,7 +172,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_demo",
         "ref": "main",
-        "commit": "ed4386da56fed5846cf645acd05166cb4983fb5a",
+        "commit": "99cca4f4a3f015678d4615fe1c0ece5c10f8e191",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -190,7 +190,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_exploit_library",
         "ref": "master",
-        "commit": "2e9ec6dc35f900e04a89b3416f4ee0f3179f90fa",
+        "commit": "c3bfdd9cd47c17113f1f8169fbfbc6eaa0bc6671",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -209,7 +209,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_frida_bridge",
         "ref": "main",
-        "commit": "dc19b66fdc0c8dd374801e1de3aa9788485c8983",
+        "commit": "c9d76731a4f2f82a1b3f40cfd9d84d25e10e1525",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -227,7 +227,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ghidra_bridge",
         "ref": "main",
-        "commit": "305c9ff2f5974d0c030502b9adf296f71dd6f61b",
+        "commit": "dc413fc5f37be8170dd711275ac18ed24ddb944e",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -245,7 +245,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_ida_bridge",
         "ref": "main",
-        "commit": "3e88cf04b60b8a2509676552f5801de900f55356",
+        "commit": "d52c9a3f23b7e3789e64be36d6603148105bd4c0",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -263,7 +263,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_jadx_bridge",
         "ref": "main",
-        "commit": "1e272660ced7c24ed7dad5a3ec8fd4c082836a2a",
+        "commit": "2a6bff1a71f0e70ba975b4bf0076ce95a25e9e2b",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -281,7 +281,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_knowledge_base",
         "ref": "main",
-        "commit": "73f5cfabad485a564986a9f605c6a05f7e239b5d",
+        "commit": "eb401f726d90314588e7f3bc1693924f4c7d3465",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -299,7 +299,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_mission_pack",
         "ref": "main",
-        "commit": "81f3cd473fa38f71c0f27087533c9faea2720520",
+        "commit": "25533d8b41e956c7a8bbeff37c4aba47ebafb430",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -317,7 +317,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_report_generator",
         "ref": "master",
-        "commit": "b2eb99a078c2b7c2c8f4d0e2b8ec2dbdf2e36fe5",
+        "commit": "cee4cc997afd6698eb4be147513966893fce9aac",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -336,7 +336,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_script_presets",
         "ref": "main",
-        "commit": "bfba114845f76c6b2ad21289858801cea205fe4e",
+        "commit": "eb2acca98cf19105e8790100baad5d50dd594614",
         "subpath": ".",
         "entry": "manifest.ts"
       },
@@ -372,7 +372,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_plugin_zap_api_call",
         "ref": "main",
-        "commit": "a649a24bf285d5f898ffd97c0dd984d05898d65f",
+        "commit": "2d7ecacb5cfe45b844eed5a1d3f9bfbd0a2eeddb",
         "subpath": ".",
         "entry": "manifest.ts"
       },

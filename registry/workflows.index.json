@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-20T05:15:27.263Z",
+  "updatedAt": "2026-05-20T23:01:28.585Z",
   "workflows": [
     {
       "slug": "anti-bot-diagnoser",
@@ -9,7 +9,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_anti_bot_diagnoser",
         "ref": "main",
-        "commit": "7c618b273807f42b8dd2ab0a184afbffce77c9c1",
+        "commit": "0ab30a62c495d690821fddacdf8a9e664dbb1c96",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -28,7 +28,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_api_openapi_probe",
         "ref": "main",
-        "commit": "f8d3090490396369483b1d4c4ba3f45b5f420e1a",
+        "commit": "f99f6c9a28761dca0ba8510f597f5f1cb69c1b84",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -47,7 +47,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_api_probe_batch",
         "ref": "main",
-        "commit": "6cfdefb7abfcb24d457d6a370d1a5780140fa708",
+        "commit": "649549640b2f598ce4cb3221661f22164cc7fcd8",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -83,7 +83,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_auth_extract",
         "ref": "main",
-        "commit": "f0d9d2fa71e726578e096d001c6fbe8631c1239c",
+        "commit": "1bf81508e2fabb66a9f27c11bd8696b00c5f4632",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -102,7 +102,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_auth_surface_mapper",
         "ref": "main",
-        "commit": "be2af231d92deb1f5cac96d7950537d0cfafb25c",
+        "commit": "88c6ef76308ca7b81f930d99869f02c236c311d2",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -121,7 +121,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_auto_assign",
         "ref": "master",
-        "commit": "978db444b525e83412a489574823b00b7d140653",
+        "commit": "679e7da9d8ff43a27a24ea52fde579a06704cd9a",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -140,7 +140,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_batch_operations",
         "ref": "master",
-        "commit": "c0b249d6be17790aca939a159bf8c46ca8197f63",
+        "commit": "e63ba0a5d2ab39871b3516a70cede0e2e3fff79c",
         "subpath": ".",
         "entry": "src/index.ts"
       },
@@ -159,7 +159,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_batch_register",
         "ref": "main",
-        "commit": "eb57c4696d06571f02877b08508e41366389e4c4",
+        "commit": "f8a68eea1614bb8b70d259b248452f7ea68284ea",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -177,7 +177,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_bundle_recovery",
         "ref": "main",
-        "commit": "d3da041794f580fa8b501d8b499937155ed47c34",
+        "commit": "9c826abf0cb2333f1287d7a4d4a5d33c4c4c21c4",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -196,7 +196,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_challenge_detector",
         "ref": "main",
-        "commit": "584bb0049dfe462ebca0914d1a2129db0280bf68",
+        "commit": "659a64f67ba0e483e6ece34354a049230abf690f",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -215,7 +215,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_deobfuscation_pipeline",
         "ref": "main",
-        "commit": "ecd2ffd582d99dbb2147640b8668ad568fc1b0c7",
+        "commit": "e55d1f22c435bbf3a303ad600a49bbe7b3495fbd",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -234,7 +234,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_electron_bridge_mapper",
         "ref": "main",
-        "commit": "02d008a196c9bda352c65761c3d36b79bf2edd77",
+        "commit": "61821fa1fcec52d758fb7f3568a15dfbbe4f9240",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -253,7 +253,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_evidence_pack",
         "ref": "main",
-        "commit": "3d264c3b46dfaaf882ddc53c7962e07748e30b24",
+        "commit": "1d502dca76147c777bc9b78fe7ce45aa366dc8e3",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -272,7 +272,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_js_bundle_search",
         "ref": "main",
-        "commit": "2c1cdd2f52e0a8f26300aaff45abd32033d2e4ad",
+        "commit": "165564c360da8dd27a141cd4779a6943827b3741",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -290,7 +290,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_protocol_registry",
         "ref": "main",
-        "commit": "6a674de9951bdb6d43e4323e2f4b386bd4c6b5ac",
+        "commit": "f8dd2eff0c1acf30c014dfc1d4fa7b24b3719696",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -309,7 +309,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_qwen_mail_open_latest",
         "ref": "main",
-        "commit": "9264e8dc37994ae8e5b03031b22de35846f6d1d5",
+        "commit": "fc69da0639fa5b0b3aff924d198907e0bc20c80a",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -328,7 +328,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_register_account_flow",
         "ref": "main",
-        "commit": "fb1d112316313220fc69242ea456ea8018bbaaaf",
+        "commit": "55f6fdc8e184e442c024424ec9da896da14f8e07",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -346,7 +346,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_replay_lab",
         "ref": "main",
-        "commit": "7c9923d368d8a05872ae58599889e2fe9dfedb23",
+        "commit": "9acda642000a31ebf91879b497cd5316017d9bb8",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -365,7 +365,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_script_evidence_scan",
         "ref": "main",
-        "commit": "eb2485b0720c5e3bae72ce3ce381ceed677ee320",
+        "commit": "5095c92df2f70beb48f98e383451d78e3ec1b1ec",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -383,7 +383,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_signature_hunter",
         "ref": "main",
-        "commit": "d4f5ffe3a22fcf5648b18cf1ddd57cd51d014023",
+        "commit": "5be995f3a7072c24bd2d924fc5c0066b202909eb",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -402,7 +402,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_signing_lineage",
         "ref": "main",
-        "commit": "784d5b89d0e1062da48ce0a86ace139d3aea0ccf",
+        "commit": "b8e57d4b6ac2f6abb4c0216265d2c0c64e0a81bc",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -421,7 +421,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_extract_link",
         "ref": "main",
-        "commit": "87adfb0b7ebf1e89a304574a72703158e5f6a7ee",
+        "commit": "bbc9975ab1ab8c89c0267a41ec578bd893290381",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -439,7 +439,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_temp_mail_open_latest",
         "ref": "main",
-        "commit": "c04438ffffaa3b87e417f13d3607d01aa9dadb73",
+        "commit": "ccaa3162d765cede24730f33c20c615519f07571",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -476,7 +476,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_web_api_capture_session",
         "ref": "main",
-        "commit": "dbad52f1130a664cefbc2be58bbe3629c8febae0",
+        "commit": "e537d9c77a5d7bbd4f144c43ab016fb5819f3fb9",
         "subpath": ".",
         "entry": "workflow.ts"
       },
@@ -494,7 +494,7 @@
         "type": "git",
         "repo": "https://github.com/vmoranv/jshook_workflow_ws_protocol_lifter",
         "ref": "main",
-        "commit": "f8558652f989ca665c9971cd86551c15deeaff93",
+        "commit": "db77760dda1a7538ae9fb252b8b368f314f041e9",
         "subpath": ".",
         "entry": "workflow.ts"
       },
