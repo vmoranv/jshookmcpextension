@@ -22,6 +22,8 @@
 - `.github/ISSUE_TEMPLATE/`：Issue 模板目录
 - `.github/workflows/auto-register-extension.yml`：自动同步流程
 
+像 `_closed_issues.json` 这类本地或 CI 生成的缓存文件不属于 registry 状态，不应纳入版本控制。
+
 ## 如何注册扩展
 
 通过 GitHub Issue 提交扩展仓库信息：
@@ -111,5 +113,13 @@ cat tmp_ext/meta.yaml
 ## 本地校验
 
 ```bash
+node scripts/validate-index.mjs
+```
+
+## 本地复现同步
+
+```bash
+gh issue list --repo vmoranv/jshookmcpextension --limit 200 --state closed --json number,title,body,labels,stateReason,createdAt,updatedAt,closedAt > _closed_issues.json
+node scripts/sync-index-from-issues.mjs --issues-file _closed_issues.json
 node scripts/validate-index.mjs
 ```

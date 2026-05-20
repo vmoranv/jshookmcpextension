@@ -22,6 +22,8 @@ This repository does **not** store plugin or workflow source code. It only maint
 - `.github/ISSUE_TEMPLATE/`: issue templates
 - `.github/workflows/auto-register-extension.yml`: automated sync workflow
 
+Generated local/CI cache files such as `_closed_issues.json` are not part of the registry state and should stay untracked.
+
 ## How to Register an Extension
 
 Submit extension repository information through a GitHub Issue:
@@ -111,5 +113,13 @@ cat tmp_ext/meta.yaml
 ## Local Validation
 
 ```bash
+node scripts/validate-index.mjs
+```
+
+## Local Sync Reproduction
+
+```bash
+gh issue list --repo vmoranv/jshookmcpextension --limit 200 --state closed --json number,title,body,labels,stateReason,createdAt,updatedAt,closedAt > _closed_issues.json
+node scripts/sync-index-from-issues.mjs --issues-file _closed_issues.json
 node scripts/validate-index.mjs
 ```

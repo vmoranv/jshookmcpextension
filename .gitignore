@@ -2,6 +2,7 @@ node_modules/
 dist/
 *.log
 *.tsbuildinfo
+_closed_issues.json
 
 # Lock files (machine-generated, not tracked in this repo)
 package-lock.json
