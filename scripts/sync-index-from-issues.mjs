@@ -48,9 +48,14 @@ function extractValue(body, label) {
 }
 
 function parseRepoUrl(repo) {
-  const match = String(repo).trim().match(/^https:\/\/github\.com\/([^/]+)\/([^/?#]+?)(?:\.git)?\/?$/i);
-  if (!match) return null;
-  return { owner: match[1], name: match[2] };
+  const raw = String(repo).trim();
+  // HTTPS: https://github.com/owner/repo or https://github.com/owner/repo.git
+  let match = raw.match(/^https:\/\/github\.com\/([^/]+)\/([^/?#]+?)(?:\.git)?\/?$/i);
+  if (match) return { owner: match[1], name: match[2] };
+  // SSH: git@github.com:owner/repo or git@github.com:owner/repo.git
+  match = raw.match(/^git@github\.com:([^/]+)\/([^/?#]+?)(?:\.git)?$/i);
+  if (match) return { owner: match[1], name: match[2] };
+  return null;
 }
 
 function deriveSlug(kind, repoName) {
@@ -201,6 +206,28 @@ function normalizeCurrent(kind, item) {
   };
 }
 
+function closeInvalidIssue(issueNumber, reason) {
+  const msg = [
+    '此 issue 不符合扩展注册规范，已自动关闭。',
+    '',
+    `原因: ${reason}`,
+    '',
+    '请使用注册模板重新提交。必需字段:',
+    '- **Kind** — `plugin` 或 `workflow`',
+    '- **Repository URL** — HTTPS 格式 `https://github.com/owner/repo`',
+    '- **Slug** — 可选，自动从仓库名推导',
+    '- **Extension ID** — 可选，自动推导',
+  ].join('\n');
+
+  try {
+    run('gh', ['issue', 'comment', String(issueNumber), '--body', msg]);
+    run('gh', ['issue', 'close', String(issueNumber), '--reason', 'not planned']);
+    console.log(`[sync-index-from-issues] Closed issue #${issueNumber}: ${reason}`);
+  } catch (err) {
+    console.log(`[sync-index-from-issues] Failed to close issue #${issueNumber}: ${err.message}`);
+  }
+}
+
 function resolveFromRepo(item) {
   const dir = mkdtempSync(join(tmpdir(), 'jshook-registry-sync-'));
   try {
@@ -315,8 +342,13 @@ for (const issue of [...issues].sort(compareIssuesAscending)) {
     }
     continue;
   }
-  const parsed = parseIssue(issue);
-  merged.set(keyOf(parsed.kind, parsed.slug), parsed);
+  try {
+    const parsed = parseIssue(issue);
+    merged.set(keyOf(parsed.kind, parsed.slug), parsed);
+  } catch (err) {
+    console.log(`[sync-index-from-issues] Issue #${issue.number} parse failed: ${err.message}`);
+    closeInvalidIssue(issue.number, err.message);
+  }
 }
 
 const resolved = [];
